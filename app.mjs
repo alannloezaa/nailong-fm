@@ -1,5 +1,5 @@
 import {readTrack,saveTrack,localAudioIds} from './storage.mjs';
-import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261106-6';
+import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261107-2';
 import {buildTheme,dominantHue,pastelHues,rgbHue,hslToRgb,cssRgb,rgbHex} from './theme.mjs';
 
 const root=document.getElementById('el-flow'),q=selector=>document.querySelector(selector),audio=q('#audio');
@@ -41,7 +41,7 @@ function setArtwork(track,record){
 function renderIdentity(){
  if(!current)return;
  q('.ef-title').textContent=current.title;q('.ef-artist').textContent=current.artist;
- q('.album-name').textContent=current.album===current.title?'':current.album;
+ q('.album-name').textContent=[current.versionLabel,current.album===current.title?'':current.album].filter(Boolean).join(' · ');
  q('#settings-song').textContent=`${current.title} · ${current.artist}`;
  const artistLinks=artistPlatforms[current.artist]||{};
  const links={spotify:current.spotifyUrl||artistLinks.spotify||`https://open.spotify.com/search/${encodeURIComponent(current.artist+' '+current.title)}`,apple:current.appleUrl||artistLinks.apple};
@@ -84,7 +84,7 @@ async function selectTrack(id,{autoplay=false}={}){
  audio.removeAttribute('src');if(url){audio.src=url;playingReady=true;}audio.load();q('#unavailable-actions').hidden=playingReady;updateQueueButtons();renderPlay();tick();
  if(playingReady){if(autoplay)void play();void refreshLyrics(token);}else{lyrics={kind:'none',lines:[]};}
  if(drawer.hidden===false)setOpen(false,card);if(libraryItems.length)renderLibrary();
- if('mediaSession'in navigator&&typeof MediaMetadata!=='undefined'){navigator.mediaSession.metadata=new MediaMetadata({title:track.title,artist:track.artist,album:track.album,artwork:[{src:new URL(track.artwork,location.href).href,sizes:'600x600',type:track.artwork.endsWith('.png')?'image/png':'image/jpeg'}]});}
+ if('mediaSession'in navigator&&typeof MediaMetadata!=='undefined'){navigator.mediaSession.metadata=new MediaMetadata({title:track.title,artist:track.artist,album:track.album,artwork:[{src:new URL(track.artwork,location.href).href,sizes:track.artworkSize||'600x600',type:track.artwork.endsWith('.png')?'image/png':'image/jpeg'}]});}
 }
 function tap(){
  if(!playingReady){openSettings();return;}if(!started){void play();return;}const now=performance.now();tick();

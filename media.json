@@ -1,11 +1,1149 @@
 {
-  "version": 1,
+  "version": 2,
   "tracks": {
+    "1461775827": {
+      "audio": "./audio-1461775827.mp3",
+      "duration": 212.32326530612244,
+      "bytes": 3531861,
+      "sha256": "c72f2b5c92c6bb26cee103126bf5209ca7a34109472e7e96f9531b09962f461e",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 40221229,
+      "lyricsIdentity": {
+        "title": "?Que Ganas?",
+        "artist": "Morat",
+        "duration": 212.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1733775118": {
+      "audio": "./audio-1733775118.mp3",
+      "duration": 235.41551020408164,
+      "bytes": 4115353,
+      "sha256": "9f9ca9905676c0ddb69d43452d4b7d463c3007c75aa8c77094a604a820e1edbf",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 24521339,
+      "lyricsIdentity": {
+        "title": "Faltas Tú",
+        "artist": "Morat",
+        "duration": 235.363265
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 12.247
+      }
+    },
+    "1648886750": {
+      "audio": "./audio-1648886750.mp3",
+      "duration": 195.5526530612245,
+      "bytes": 3324971,
+      "sha256": "57be4510244976537675f9fd9339a90ba88aff5a8d7fd26edd00d14014e999d0",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 7278652,
+      "lyricsIdentity": {
+        "title": "Segundos Platos",
+        "artist": "Morat",
+        "duration": 185.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1438883873": {
+      "audio": "./audio-1438883873.mp3",
+      "duration": 214.85714285714286,
+      "bytes": 3426185,
+      "sha256": "1b9702f5c7b04b22f8f3adc01e8abd7ef115823397f17c4449f3b5266167ec02",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 124317,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 13813415,
+      "lyricsIdentity": {
+        "title": "Mi Vida Entera",
+        "artist": "Morat (2)",
+        "duration": 214.826667
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1438883871": {
+      "audio": "./audio-1438883871.mp3",
+      "duration": 176.19591836734693,
+      "bytes": 2913887,
+      "sha256": "04445007661b233a9d911a1ae3631de49747e3406cf16eb7fff72ce4ac402b45",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 13813897,
+      "lyricsIdentity": {
+        "title": "Cuando El Amor Se Escapa",
+        "artist": "Morat (2)",
+        "duration": 176.133333
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1438883872": {
+      "audio": "./audio-1438883872.mp3",
+      "duration": 230.7395918367347,
+      "bytes": 4106509,
+      "sha256": "a1743575ea1f7669fe3fa6457ac348a148c16e1e9d3279c9fa35e939fd6a6ff6",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128874,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 25016861,
+      "lyricsIdentity": {
+        "title": "No Se Va",
+        "artist": "Morat",
+        "duration": 230.739592
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 11.35
+      }
+    },
+    "1440840270": {
+      "audio": "./audio-1440840270.mp3",
+      "duration": 244.8195918367347,
+      "bytes": 4164442,
+      "sha256": "3ecdc5c8ea48e376e5515ff70297895dd05d3ab1651153f1e2de78896891c2e4",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 7486812,
+      "lyricsIdentity": {
+        "title": "Cómo Te Atreves",
+        "artist": "Morat",
+        "duration": 241.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 2.49
+      }
+    },
+    "1389954192": {
+      "audio": "./audio-1389954192.mp3",
+      "duration": 225.72408163265305,
+      "bytes": 3792354,
+      "sha256": "36088aa2ac4146b438d716796f43a8dbb5a35b3032924a4d676888a548640801",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 15913487,
+      "lyricsIdentity": {
+        "title": "Cuando Nadie Ve",
+        "artist": "Morat",
+        "duration": 220.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1438883869": {
+      "audio": "./audio-1438883869.mp3",
+      "duration": 237.0612244897959,
+      "bytes": 4177524,
+      "sha256": "bab255c0fe8e92e05e7768fec05c3a6fbc55ccf1b55e6258efbc36a472af42fd",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 24895257,
+      "lyricsIdentity": {
+        "title": "Besos En Guerra",
+        "artist": "Morat",
+        "duration": 237.061224
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 6.406
+      }
+    },
+    "1440840253": {
+      "audio": "./audio-1440840253.mp3",
+      "duration": 263.810612244898,
+      "bytes": 4039159,
+      "sha256": "7996f1fb947927e1c0ffc2bed032f6e3bc695ae627290ee596f22a281c51543b",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 114589,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 26751045,
+      "lyricsIdentity": {
+        "title": "Aprender A Quererte",
+        "artist": "Morat",
+        "duration": 263.810612
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 3.987
+      }
+    },
+    "1484464301": {
+      "audio": "./audio-1484464301.mp3",
+      "duration": 204.38204081632654,
+      "bytes": 3593901,
+      "sha256": "93725a1a9f2261e40afeb9fe1629f2a79209b74d048d773b11db6c08a2d72783",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 130841,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 13514543,
+      "lyricsIdentity": {
+        "title": "A Dónde Vamos",
+        "artist": "Morat",
+        "duration": 205.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1489706222": {
+      "audio": "./audio-1489706222.mp3",
+      "duration": 231.7322448979592,
+      "bytes": 3834212,
+      "sha256": "fddcf73b271980abdf95a8bab32722534490a3452ff72b51d7870dd6a70a2d94",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 24483767,
+      "lyricsIdentity": {
+        "title": "Enamórate De Alguien Más",
+        "artist": "Morat",
+        "duration": 231.706122
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6768768287": {
+      "audio": "./audio-6768768287.mp3",
+      "duration": 188.7608163265306,
+      "bytes": 3288373,
+      "sha256": "8a3d150195cdc73814b8e82cbddb85bfaef9aea262ab622164a0ac69de92510d",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 132713,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 15610776,
+      "lyricsIdentity": {
+        "title": "UGH",
+        "artist": "Nsqk",
+        "duration": 189.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6768693065": {
+      "audio": "./audio-6768693065.mp3",
+      "duration": 169.35183673469388,
+      "bytes": 2852196,
+      "sha256": "317939e0128707fb9c480bec06f31b7d5db0f0d527a5b177166ad750cb908960",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 126689,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 28306411,
+      "lyricsIdentity": {
+        "title": "nsqk - BAD INTENCIONES (Video oficial)",
+        "artist": "Nsqk",
+        "duration": 170.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1698028263": {
+      "audio": "./audio-1698028263.mp3",
+      "duration": 214.64816326530612,
+      "bytes": 3733190,
+      "sha256": "6ebf0a3d4b225a6c19c9a0cde1edf6abfd75e9b2efb0128e1ca17aa2b93ce3f3",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 130232,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 25075405,
+      "lyricsIdentity": {
+        "title": "EN EL GHETTO #3  (Par de cosas)",
+        "artist": "Ghetto Kids; NSQK",
+        "duration": 215.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6768720198": {
+      "audio": "./audio-6768720198.mp3",
+      "duration": 189.3877551020408,
+      "bytes": 3231717,
+      "sha256": "b6a2cc3fb6568669613e3615a65afa1e68d760bb72c292b6eb498e6b802a764d",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 131221,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 21959250,
+      "lyricsIdentity": {
+        "title": "COMETIERRA REMIX",
+        "artist": "Nsqk",
+        "duration": 189.361633
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 3.93
+      }
+    },
+    "6813620586": {
+      "audio": "./audio-6813620586.mp3",
+      "duration": 199.02693877551022,
+      "bytes": 3118954,
+      "sha256": "7c321aae59d1cf6aac6ac9234238c43b66203b40adcadb13cf110ba29740ec83",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 119880,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 40168347,
+      "lyricsIdentity": {
+        "title": "No Basta Con Querernos Más (Album Version)",
+        "artist": "Nsqk",
+        "duration": 198.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6813620415": {
+      "audio": "./audio-6813620415.mp3",
+      "duration": 195.86612244897958,
+      "bytes": 2862909,
+      "sha256": "33feb97e9352cf4c0eca857170572baacb58bdc03533f5e0e7ab3cff8bd98ed8",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 112193,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 39288584,
+      "lyricsIdentity": {
+        "title": "nsqk - Santurce (Visualizer)",
+        "artist": "Nsqk",
+        "duration": 196.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6820282590": {
+      "audio": "./audio-6820282590.mp3",
+      "duration": 278.1257142857143,
+      "bytes": 4785615,
+      "sha256": "2f902199424298aa3c1b651d86a68b7a26c7c88d3c2d77cbab9b4fbbf34c5d8a",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 133608,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 39250946,
+      "lyricsIdentity": {
+        "title": "Lo Tuvimos Pero Ya No Esta",
+        "artist": "Nsqk y Riosse",
+        "duration": 280.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -0.742
+      }
+    },
+    "6813620420": {
+      "audio": "./audio-6813620420.mp3",
+      "duration": 198.03428571428572,
+      "bytes": 3246449,
+      "sha256": "1bfc05295b6bff71acf6a4726c46f5f997322a0b22db7df75af31bf30916a795",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 124391,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 39407551,
+      "lyricsIdentity": {
+        "title": "?Que Tan Cerca Es Cerca?",
+        "artist": "Nsqk",
+        "duration": 198.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6769182949": {
+      "audio": "./audio-6769182949.mp3",
+      "duration": 233.48244897959182,
+      "bytes": 3900764,
+      "sha256": "3114921fc5e87ae80382a45907e3503ebf0a69a4ad8053510fe57da8e691b809",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 124311,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 9701717,
+      "lyricsIdentity": {
+        "title": "Moldes",
+        "artist": "Nsqk",
+        "duration": 233.414
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6769182621": {
+      "audio": "./audio-6769182621.mp3",
+      "duration": 233.6130612244898,
+      "bytes": 3690646,
+      "sha256": "76c946312752e9fbb065c407f1bec7e3ed4981df2ad270d27eb999cd130f92da",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 117291,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 22265564,
+      "lyricsIdentity": {
+        "title": "Si En Tu Mente Estuve",
+        "artist": "Nsqk",
+        "duration": 233.560816
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 29.889
+      }
+    },
     "monet": {
       "audio": "./audio-monet.mp3",
-      "lyricsId": 24446774,
       "duration": 173.4530612244898,
-      "sha256": "f8956d448cc104cfb1852249a0a9b4e27de1aa8265e6762658cb24e0d969c3ea"
+      "bytes": 2784308,
+      "sha256": "f8956d448cc104cfb1852249a0a9b4e27de1aa8265e6762658cb24e0d969c3ea",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 118862,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 24446774,
+      "lyricsIdentity": {
+        "title": "nsqk - MONET - 256",
+        "artist": "Nsqk",
+        "duration": 176.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6813620405": {
+      "audio": "./audio-6813620405.mp3",
+      "duration": 222.7983673469388,
+      "bytes": 3619759,
+      "sha256": "f27d7c33574bb85000c7bd9f49fce11c6bfe328d6865d5907a71ebd187507894",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 125146,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 39078078,
+      "lyricsIdentity": {
+        "title": "Dientes De Fierro",
+        "artist": "Nsqk y Jean Dawson",
+        "duration": 223.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6813620576": {
+      "audio": "./audio-6813620576.mp3",
+      "duration": 181.68163265306123,
+      "bytes": 1798683,
+      "sha256": "84448d745060cfdbbc75910b183494997b1f0b0282064ee05a86fbe9c7f79bf4",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 71792,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 39535922,
+      "lyricsIdentity": {
+        "title": "Hombre De Bien",
+        "artist": "Nsqk",
+        "duration": 182.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "6768766482": {
+      "audio": "./audio-6768766482.mp3",
+      "duration": 224.80979591836734,
+      "bytes": 3877053,
+      "sha256": "91af2282b404aab27fe0d9546e6e661dcf62a7ed32f2913b11f48285ce800ae7",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 8381830,
+      "lyricsIdentity": {
+        "title": "LOVELANGUAGE",
+        "artist": "Nsqk",
+        "duration": 225.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1888034835": {
+      "audio": "./audio-1888034835.mp3",
+      "duration": 203.99020408163264,
+      "bytes": 3407748,
+      "sha256": "4cb47bd49a9e5c277a41bc5d1def6c563ff2a5cccdcbcd6d81152a3153fe4e83",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 23109698,
+      "lyricsIdentity": {
+        "title": "Tarde o temprano",
+        "artist": "Nsqk",
+        "duration": 204.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1891538041": {
+      "audio": "./audio-1891538041.mp3",
+      "duration": 249.67836734693878,
+      "bytes": 4112134,
+      "sha256": "9559c92af56db0c0b5d35360e9a2532e31110c19b77ef268ba575aac84a20ea7",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 8381962,
+      "lyricsIdentity": {
+        "title": "NADIE MÁS!",
+        "artist": "Nsqk",
+        "duration": 250.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1496488402": {
+      "audio": "./audio-1496488402.mp3",
+      "duration": 214.04734693877552,
+      "bytes": 3622934,
+      "sha256": "e3c6b513718b41221d8cf282c63ffb7e02c1ce2dfea1c1f08e6cd9c7479835b3",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 15466393,
+      "lyricsIdentity": {
+        "title": "309",
+        "artist": "nsqk",
+        "duration": 214.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1618508163": {
+      "audio": "./audio-1618508163.mp3",
+      "duration": 133.7991836734694,
+      "bytes": 2330771,
+      "sha256": "aac95300650d707e82ceccc7b2bcf3cdeb56abac516822defa9ba30eb57e1ea0",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 10429508,
+      "lyricsIdentity": {
+        "title": "No Sabe Igual",
+        "artist": "Rels B",
+        "duration": 136.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1489755052": {
+      "audio": "./audio-1489755052.mp3",
+      "duration": 237.8187755102041,
+      "bytes": 4036045,
+      "sha256": "e1c36db0b5f3c5d8093ca66723095424e432e05045c66e5c52cf64bdc45d711f",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 34782537,
+      "lyricsIdentity": {
+        "title": "Buenos genes (con DELLAFUENTE)",
+        "artist": "Rels B",
+        "duration": 238.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1489751898": {
+      "audio": "./audio-1489751898.mp3",
+      "duration": 197.7730612244898,
+      "bytes": 3348210,
+      "sha256": "0b8ff7c5d7fcc80ccc7752756f0c4bfe7a273a9b0d42ce1c0cc83521add70df3",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 36081236,
+      "lyricsIdentity": {
+        "title": "Girlfriend",
+        "artist": "Rels B",
+        "duration": 203.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1489752614": {
+      "audio": "./audio-1489752614.mp3",
+      "duration": 242.0324375,
+      "bytes": 4129543,
+      "sha256": "bd3c06b4934c398a531b67008792cc48e8945353cbb037ef5a51c71450ee640f",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 2461883,
+      "lyricsIdentity": {
+        "title": "Tienes el Don",
+        "artist": "Rels B",
+        "duration": 242.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1740807800": {
+      "audio": "./audio-1740807800.mp3",
+      "duration": 139.1804081632653,
+      "bytes": 2380007,
+      "sha256": "cc3a719bc44c0f2e4edc8b65ba067d43191f6b4652b2f0b93de01c8c27b95e40",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 33780526,
+      "lyricsIdentity": {
+        "title": "La vida sin ti",
+        "artist": "Rels B",
+        "duration": 140.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1500960878": {
+      "audio": "./audio-1500960878.mp3",
+      "duration": 163.91836734693877,
+      "bytes": 3269731,
+      "sha256": "1cfbf0f5721b661bf4346b5e3e36e5f41fe2b353219ae5321f25dc5967d6ffb7",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 151716,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 20639198,
+      "lyricsIdentity": {
+        "title": "Cuando quieras",
+        "artist": "Rels B",
+        "duration": 164.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -0.82
+      }
+    },
+    "1489755046": {
+      "audio": "./audio-1489755046.mp3",
+      "duration": 189.70122448979592,
+      "bytes": 3176052,
+      "sha256": "d464b2abf5ef72317d1fcbc7b6128d14b4072cb829a21162651f476ce7231d0e",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 2691478,
+      "lyricsIdentity": {
+        "title": "Love It",
+        "artist": "Rels B",
+        "duration": 190.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1489752087": {
+      "audio": "./audio-1489752087.mp3",
+      "duration": 233.48244897959182,
+      "bytes": 3934920,
+      "sha256": "2e5bf418db532981d98a8b4f82a426e7e5b3c5a52446d3cd4a5a17e4bd6f9850",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 10003847,
+      "lyricsIdentity": {
+        "title": "A Mí",
+        "artist": "Rels B",
+        "duration": 233.0
+      },
+      "lyricsTiming": {
+        "scale": 1.018115,
+        "offset": -1.868
+      }
+    },
+    "1636552880": {
+      "audio": "./audio-1636552880.mp3",
+      "duration": 111.6995918367347,
+      "bytes": 1871706,
+      "sha256": "a0ebf3e5cc5c703dd5718cbae3eeaf3c957b5b597c642cd746fed4b3a93c3e02",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 24167245,
+      "lyricsIdentity": {
+        "title": "cómo dormiste?",
+        "artist": "Rels B",
+        "duration": 112.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -0.837
+      }
+    },
+    "1675865125": {
+      "audio": "./audio-1675865125.mp3",
+      "duration": 151.64081632653063,
+      "bytes": 2554798,
+      "sha256": "52f38206ce1eb34d6741ff5528129f0a161b981a9a7e4b48e9c220eeade72075",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 10944546,
+      "lyricsIdentity": {
+        "title": "lo que hay x aquí",
+        "artist": "Rels B",
+        "duration": 151.541
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1740811961": {
+      "audio": "./audio-1740811961.mp3",
+      "duration": 223.92163265306124,
+      "bytes": 3799355,
+      "sha256": "5ee920939d1e910cf812c96195e283bbabec99c5fda07d71534449bfe36c87d0",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 13612288,
+      "lyricsIdentity": {
+        "title": "Un Desperdicio",
+        "artist": "Rels B",
+        "duration": 224.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1815278975": {
+      "audio": "./audio-1815278975.mp3",
+      "duration": 110.34122448979592,
+      "bytes": 2187273,
+      "sha256": "be235e3a3e86c915b686244b084fa014bb2bc0ef05cf9d5cb563ae87335ec2b1",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 139626,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 22911095,
+      "lyricsIdentity": {
+        "title": "TU VAS SIN (fav)",
+        "artist": "Rels B",
+        "duration": 110.52
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1482661348": {
+      "audio": "./audio-1482661348.mp3",
+      "duration": 180.40163265306123,
+      "bytes": 3054907,
+      "sha256": "b5a49524a97ca9f104d0705d964ea4bb953da6c25cb7fdcab4d85e58504307ca",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 5432433,
+      "lyricsIdentity": {
+        "title": "Sin Mirar las Señales",
+        "artist": "Rels B",
+        "duration": 180.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1781234489": {
+      "audio": "./audio-1781234489.mp3",
+      "duration": 147.504,
+      "bytes": 2614168,
+      "sha256": "9a2e935e7462f03310cb76adb65e3c6c857218ea229ff25fecf5e92084f16e93",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 135655,
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "lyricsId": 15610051,
+      "lyricsIdentity": {
+        "title": "Te Regalo",
+        "artist": "Rels B",
+        "duration": 147.44
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1447554997": {
+      "audio": "./audio-1447554997.mp3",
+      "duration": 230.6691875,
+      "bytes": 3713235,
+      "sha256": "6c65768084441d52ac2571f9c12fc0e70e3e8bcc4e9f2dae2e4adc0475265efe",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 23981379,
+      "lyricsIdentity": {
+        "title": "Como Antes",
+        "artist": "Bad Bunny",
+        "duration": 230.62059
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "450171018": {
+      "audio": "./audio-450171018.mp3",
+      "duration": 201.2734693877551,
+      "bytes": 3433912,
+      "sha256": "a0873da21eb3c189ded04a8fd8606ecb361a9e3f9476a438878b277b22e27d34",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 2179956,
+      "lyricsIdentity": {
+        "title": "Tu Mirada",
+        "artist": "Reik",
+        "duration": 200.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -0.7
+      }
+    },
+    "179573237": {
+      "audio": "./audio-179573237.mp3",
+      "duration": 285.570612244898,
+      "bytes": 4906447,
+      "sha256": "02b0d12617b48a836c0262baa08dec5ea4780e08f5f6e187f278b48a1d5e25fa",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 132850,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 31995900,
+      "lyricsIdentity": {
+        "title": "Labios Compartidos",
+        "artist": "Maná",
+        "duration": 286.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -3.175
+      }
+    },
+    "1716321157": {
+      "audio": "./audio-1716321157.mp3",
+      "duration": 184.16326530612244,
+      "bytes": 3255381,
+      "sha256": "649dd331c10ec1925266e8e59e38486d2db40c75f24a13d77d4b1eb683dca01b",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 8264375,
+      "lyricsIdentity": {
+        "title": "El Ataque De Las Chicas Cocodrilo",
+        "artist": "Hombres G",
+        "duration": 184.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": -2.34
+      }
+    },
+    "1699394154": {
+      "audio": "./audio-1699394154.mp3",
+      "duration": 157.85795918367347,
+      "bytes": 2756729,
+      "sha256": "7f1c68e05a4d421135961a2c32c944330312d157ba2de0e4392cd5a0532304b2",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 127287,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 5209045,
+      "lyricsIdentity": {
+        "title": "El ataque de las chicas cocodrilo",
+        "artist": "Hombres G,Morat",
+        "duration": 158.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1761909328": {
+      "audio": "./audio-1761909328.mp3",
+      "duration": 169.0122448979592,
+      "bytes": 2852196,
+      "sha256": "ad1035f94df5569879788f3fbbfb45c11c1e4b3de91cab0752746988ac25a943",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 128000,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 29428001,
+      "lyricsIdentity": {
+        "title": "Joe",
+        "artist": "JHAYCO",
+        "duration": 169.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1814146674": {
+      "audio": "./audio-1814146674.mp3",
+      "duration": 218.74938775510205,
+      "bytes": 3632087,
+      "sha256": "89176fea80c946f30831dabb62dd9f8a4e8b88bb754b4f4c44367b1c22f758c9",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 126115,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 29951079,
+      "lyricsIdentity": {
+        "title": "CONEXIÓN PSÍQUICA",
+        "artist": "Aitana",
+        "duration": 219.0
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1787022980": {
+      "audio": "./audio-1787022980.mp3",
+      "duration": 200.75102040816327,
+      "bytes": 3254614,
+      "sha256": "dfbdee729729de497789d1d2fac6ee14adb741a4428968632107a6bc5917bb2e",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 122788,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 16571108,
+      "lyricsIdentity": {
+        "title": "PERFuMITO NUEVO",
+        "artist": "Bad Bunny",
+        "duration": 200.658
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
+    },
+    "1787022999": {
+      "audio": "./audio-1787022999.mp3",
+      "duration": 235.38938775510204,
+      "bytes": 4219179,
+      "sha256": "bc23acc4d95bff4d54fffb76c8264d618e3388df22bd61a3077d7267669d1f4f",
+      "encoding": {
+        "format": "MP3",
+        "bitrate": 137954,
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "lyricsId": 19777057,
+      "lyricsIdentity": {
+        "title": "VeLDÁ",
+        "artist": "Bad Bunny",
+        "duration": 235.336871
+      },
+      "lyricsTiming": {
+        "scale": 1,
+        "offset": 0
+      }
     }
   }
 }

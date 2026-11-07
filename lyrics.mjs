@@ -14,14 +14,27 @@ export function advanceHybrid({cursor,cue,tap=false,step=1,now=0,lastTap=-Infini
  return clamp(now-lastTap>=manualHold?cue:Math.max(cursor,cue));
 }
 const memory=new Map();
-async function getJson(url,signal){const response=await fetch(url,{signal});if(!response.ok){const error=new Error(`lyrics-${response.status}`);error.status=response.status;throw error;}return response.json();}
+async function getJson(url,signal){
+ for(let attempt=0;attempt<3;attempt++){
+  const response=await fetch(url,{signal,headers:{'Lrclib-Client':'NailongFM/1.0 (https://alannloezaa.github.io/nailong-fm/)'}});
+  if((response.status===429||response.status===503)&&attempt<2){const seconds=Number(response.headers.get('Retry-After'));const wait=(Number.isFinite(seconds)&&seconds>0?seconds:2)*1000+250;await new Promise((resolve,reject)=>{const done=()=>{signal?.removeEventListener('abort',abort);resolve();},timer=setTimeout(done,wait),abort=()=>{clearTimeout(timer);reject(new DOMException('Aborted','AbortError'));};if(signal?.aborted)abort();else signal?.addEventListener('abort',abort,{once:true});});continue;}
+  if(!response.ok){const error=new Error(`lyrics-${response.status}`);error.status=response.status;throw error;}return response.json();
+ }
+}
+export function retimeLines(lines,{scale=1,offset=0}={}){const speed=Number.isFinite(scale)&&scale>0?scale:1,shift=Number.isFinite(offset)?offset:0;return lines.map(line=>({...line,time:Math.max(0,Math.round((line.time*speed+shift)*1000)/1000)}));}
 function resultOf(record,approximate=false){const lines=parseLrc(record.syncedLyrics||'');if(lines.length)return {kind:'synced',lines,recordId:record.id,approximate};const plain=String(record.plainLyrics||'').split(/\r?\n/).map(text=>text.trim()).filter(text=>text&&!/^\[.*\]$/.test(text)).map(text=>({time:0,text}));if(record.instrumental)return {kind:'instrumental',lines:[],recordId:record.id};return {kind:plain.length?'plain':'none',lines:plain,recordId:record.id};}
 export async function loadLyrics(track,{local={},configured={},signal}={}){
  if(local.lrc){const lines=parseLrc(local.lrc);return {kind:lines.length?'synced':'none',lines,local:true};}
  if(configured.lyrics){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
  const cacheKey=`${track.id}:${Math.round(track.duration||0)}`;if(memory.has(cacheKey))return memory.get(cacheKey);
  let result;
- if(configured.lyricsId){try{const record=await getJson(`https://lrclib.net/api/get/${configured.lyricsId}`,signal);if(normalize(record.artistName).includes(normalize(track.artist))&&Math.abs(Number(record.duration)-track.duration)<=3){result=resultOf(record,Math.abs(Number(record.duration)-track.duration)>2);}}catch(error){if(error.name==='AbortError')throw error;}}
+ if(configured.lyricsId){try{
+  const record=await getJson(`https://lrclib.net/api/get/${configured.lyricsId}`,signal),identity=configured.lyricsIdentity;
+  const sameAudio=Math.abs(Number(configured.duration)-track.duration)<.4&&(!local.audio||local.audio.size===configured.bytes);
+  const reviewed=identity&&sameAudio&&normalize(record.trackName)===normalize(identity.title)&&normalize(record.artistName)===normalize(identity.artist)&&Math.abs(Number(record.duration)-Number(identity.duration))<1;
+  const legacy=!identity&&normalize(record.artistName).includes(normalize(track.artist))&&Math.abs(Number(record.duration)-track.duration)<=3;
+  if(reviewed||legacy){result=resultOf(record,legacy&&Math.abs(Number(record.duration)-track.duration)>2);if(reviewed&&configured.lyricsSync===false)result=resultOf({...record,syncedLyrics:null});else if(reviewed&&result.kind==='synced')result={...result,lines:retimeLines(result.lines,configured.lyricsTiming),calibrated:true};}
+ }catch(error){if(error.name==='AbortError')throw error;}}
  if(!result){const query=new URLSearchParams({track_name:track.title,artist_name:track.artist,duration:String(Math.max(1,Math.round(track.duration||1)))});if(track.album)query.set('album_name',track.album);try{result=resultOf(await getJson(`https://lrclib.net/api/get?${query}`,signal));}catch(error){if(error.name==='AbortError')throw error;if(error.status!==404&&error.status!==400)throw error;}}
  if(!result||result.kind==='none'){try{const query=new URLSearchParams({track_name:track.title,artist_name:track.artist});const records=await getJson(`https://lrclib.net/api/search?${query}`,signal);const candidates=records.filter(record=>normalize(record.trackName)===normalize(track.title)&&normalize(record.artistName).includes(normalize(track.artist)));const exact=candidates.find(record=>record.syncedLyrics&&Math.abs(record.duration-track.duration)<=2);const plain=candidates.find(record=>record.plainLyrics);if(exact)result=resultOf(exact);else if(plain)result=resultOf({...plain,syncedLyrics:null});}catch(error){if(error.name==='AbortError')throw error;}}
  result||={kind:'none',lines:[]};memory.set(cacheKey,result);return result;
