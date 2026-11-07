@@ -1,4 +1,4 @@
-const CACHE_PREFIX=`nailong-fm:${self.registration.scope}:`,CACHE=CACHE_PREFIX+'v7';
+const CACHE_PREFIX=`nailong-fm:${self.registration.scope}:`,CACHE=CACHE_PREFIX+'v8';
 const SHELL=['./','./index.html','./base.css','./site.css?v=20261107-1','./app.mjs?v=20261107-1','./lyrics.mjs?v=20261106-6','./storage.mjs','./theme.mjs','./catalog.json','./media.json','./icon.svg','./manifest.webmanifest','./artwork/monet-hd.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
