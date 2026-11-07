@@ -42,9 +42,9 @@ function renderIdentity(){
  q('.ef-title').textContent=current.title;q('.ef-artist').textContent=current.artist;
  q('.album-name').textContent=current.album===current.title?'':current.album;
  q('#settings-song').textContent=`${current.title} · ${current.artist}`;
- q('#apple-center').href=current.appleUrl;
  const links=artistPlatforms[current.artist];
- for(const platform of ['apple','spotify']){const link=q(`#${platform}-link`);link.hidden=!links;if(links){link.href=links[platform];link.textContent=`${current.artist} en ${platform==='apple'?'Apple Music':'Spotify'} ↗`;}}
+ q('#spotify-center').href=links.spotify;q('#spotify-center').setAttribute('aria-label',`Abrir ${current.artist} en Spotify`);
+ for(const platform of ['spotify','apple']){const link=q(`#${platform}-link`);link.hidden=!links;if(links){link.href=links[platform];link.textContent=`${current.artist} en ${platform==='apple'?'Apple Music':'Spotify'} ↗`;}}
 }
 
 function showText(text){if(renderedText===text)return;renderedText=text;const element=q('.ef-current-line');element.textContent=text;element.classList.remove('ef-line-enter');requestAnimationFrame(()=>element.classList.add('ef-line-enter'));}
