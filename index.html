@@ -7,8 +7,8 @@
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261106-5">
- <script type="module" src="./app.mjs?v=20261106-5"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261106-6">
+ <script type="module" src="./app.mjs?v=20261106-6"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -19,6 +19,7 @@
  <main class="ef-stage">
   <div class="ef-now"><span class="ef-artist">Nsqk</span><h2 class="ef-title">MONET</h2><p class="album-name"></p></div>
   <div class="lyric-shell"><button type="button" class="ef-lyric ef-glass" aria-label="Reproducir MONET"><span class="ef-current-line" aria-live="polite">Toca para escuchar.</span><span class="ef-lyric-foot"><span class="ef-interaction-hint">Si dejas de tocar, sigue solo.</span></span></button><label class="mode-picker"><span data-icon="hand" aria-hidden="true"></span><select id="lyric-mode" aria-label="Modo de la letra"><option value="mixed">Mixto</option><option value="manual">Manual</option><option value="auto">Automático</option></select></label></div>
+  <div id="manual-controls" class="manual-controls" role="group" aria-label="Control manual de la letra" hidden><button id="manual-back" type="button"><span data-icon="left" aria-hidden="true"></span><span>Frase anterior</span></button><button id="manual-sync" type="button"><span data-icon="sync" aria-hidden="true"></span><span>Volver a la canción</span></button></div>
   <p id="status" class="sr-only" aria-live="polite">Lista para reproducir.</p>
   <div id="unavailable-actions" class="inline-actions" hidden><a id="spotify-center" class="platform-primary" href="https://open.spotify.com/artist/1jtvmXiemNFkPO11NMdjfu" target="_blank" rel="noopener">Abrir en Spotify <span aria-hidden="true">↗</span></a><button type="button" id="attach-current">Agregar mi audio</button></div>
  </main>

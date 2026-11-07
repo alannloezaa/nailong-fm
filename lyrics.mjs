@@ -5,10 +5,10 @@ export function parseLrc(text){
  lines.sort((a,b)=>a.time-b.time);const merged=[];for(const line of lines){const previous=merged.at(-1);if(previous&&Math.abs(previous.time-line.time)<0.001){if(line.text&&!previous.text.includes(line.text))previous.text=[previous.text,line.text].filter(Boolean).join('\n');}else merged.push(line);}return merged;
 }
 export function cueAt(lines,time){let low=0,high=lines.length-1,result=-1;while(low<=high){const mid=(low+high)>>1;if(lines[mid].time<=time){result=mid;low=mid+1;}else high=mid-1;}return result;}
-export function advanceHybrid({cursor,cue,tap=false,now=0,lastTap=-Infinity,total,manualHold=3000,mode='mixed'}){
+export function advanceHybrid({cursor,cue,tap=false,step=1,now=0,lastTap=-Infinity,total,manualHold=3000,mode='mixed'}){
  if(!total)return -1;
  const clamp=value=>Math.min(total-1,Math.max(-1,value));
- if(mode==='manual')return clamp(tap?cursor+1:cursor);
+ if(mode==='manual')return clamp(tap?cursor+step:cursor);
  if(mode==='auto')return clamp(cue);
  if(tap)return clamp(Math.max(cursor,cue)+1);
  return clamp(now-lastTap>=manualHold?cue:Math.max(cursor,cue));
