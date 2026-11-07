@@ -43,9 +43,10 @@ function renderIdentity(){
  q('.ef-title').textContent=current.title;q('.ef-artist').textContent=current.artist;
  q('.album-name').textContent=current.album===current.title?'':current.album;
  q('#settings-song').textContent=`${current.title} · ${current.artist}`;
- const links=artistPlatforms[current.artist];
- q('#spotify-center').href=links.spotify;q('#spotify-center').setAttribute('aria-label',`Abrir ${current.artist} en Spotify`);
- for(const platform of ['spotify','apple']){const link=q(`#${platform}-link`);link.hidden=!links;if(links){link.href=links[platform];link.textContent=`${current.artist} en ${platform==='apple'?'Apple Music':'Spotify'} ↗`;}}
+ const artistLinks=artistPlatforms[current.artist]||{};
+ const links={spotify:current.spotifyUrl||artistLinks.spotify||`https://open.spotify.com/search/${encodeURIComponent(current.artist+' '+current.title)}`,apple:current.appleUrl||artistLinks.apple};
+ q('#spotify-center').href=links.spotify;q('#spotify-center').setAttribute('aria-label',`Abrir ${current.title} de ${current.artist} en Spotify`);
+ for(const platform of ['spotify','apple']){const link=q(`#${platform}-link`);link.hidden=!links[platform];if(links[platform]){link.href=links[platform];link.textContent=`${current.title} en ${platform==='apple'?'Apple Music':'Spotify'} ↗`;}}
 }
 
 function showText(text){if(renderedText===text)return;renderedText=text;const element=q('.ef-current-line');element.textContent=text;element.classList.remove('ef-line-enter');requestAnimationFrame(()=>element.classList.add('ef-line-enter'));}
@@ -96,7 +97,7 @@ function previousPhrase(){if(lyricMode!=='manual'||!lyrics.lines.length||cursor<
 function returnToSong(){if(lyricMode!=='manual'||lyrics.kind!=='synced')return;cursor=cueAt(lyrics.lines,(audio.currentTime||0)+Number(offsets[current.id]||0));lastTap=-Infinity;tick();}
 function rebuildLibrary(){
  const key=normalize(search),collection=view==='albums'?catalog.albums:catalog.tracks;
- libraryItems=collection.filter(item=>(artist==='all'||item.artist===artist)&&(!albumFilter||item.albumId===albumFilter)&&(view!=='available'||hasAudio(item))&&(!key||normalize(`${item.title} ${item.artist} ${item.album||''}`).includes(key)));
+ libraryItems=collection.filter(item=>(artist==='all'||(item.group||item.artist)===artist)&&(!albumFilter||item.albumId===albumFilter)&&(view!=='available'||hasAudio(item))&&(!key||normalize(`${item.title} ${item.artist} ${item.credits||''} ${item.album||''}`).includes(key)));
  if(view==='albums')libraryItems.sort((a,b)=>(b.releaseDate||'').localeCompare(a.releaseDate||''));
  else libraryItems.sort((a,b)=>Number(hasAudio(b))-Number(hasAudio(a))||a.title.localeCompare(b.title,'es'));
  browse=Math.max(0,libraryItems.findIndex(item=>item.id===current?.id));visibleLimit=80;renderLibrary();
@@ -108,7 +109,8 @@ function renderLibrary(){
  browse=Math.min(Math.max(0,browse),libraryItems.length-1);const preview=libraryItems[browse],offsetsForCards=libraryItems.length===1?[0]:libraryItems.length===2?[1,0]:[-1,1,0];
  sleeves.innerHTML=offsetsForCards.map(offset=>{const item=libraryItems[(browse+offset+libraryItems.length)%libraryItems.length];return `<button type="button" class="ef-sleeve" data-pick="${esc(item.id)}" data-offset="${offset}" aria-label="Elegir ${esc(item.title)}, ${esc(item.artist)}"><img src="${esc(item.artwork)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`;}).join('');
  q('.ef-preview-title').textContent=preview.title;q('.ef-preview-artist').textContent=preview.artist;
- q('.ef-song-names').innerHTML=libraryItems.slice(0,visibleLimit).map(item=>`<button type="button" class="ef-name" data-pick="${esc(item.id)}" aria-current="${item.id===current?.id}">${esc(item.title)}</button>`).join('')+(libraryItems.length>visibleLimit?'<button type="button" class="ef-name" data-more="true">Mostrar más</button>':'');
+ const titleCounts=new Map();for(const item of libraryItems)titleCounts.set(item.title,(titleCounts.get(item.title)||0)+1);
+ q('.ef-song-names').innerHTML=libraryItems.slice(0,visibleLimit).map(item=>`<button type="button" class="ef-name" data-pick="${esc(item.id)}" aria-current="${item.id===current?.id}">${esc(item.title)}${titleCounts.get(item.title)>1?' · '+esc(item.artist):''}</button>`).join('')+(libraryItems.length>visibleLimit?'<button type="button" class="ef-name" data-more="true">Mostrar más</button>':'');
 }
 function setOpen(open,focusTarget){clearTimeout(closeTimer);toggle.setAttribute('aria-expanded',String(open));if(open){rebuildLibrary();drawer.hidden=false;drawer.inert=false;drawer.classList.remove('is-closing');scrim.hidden=false;q('.ef-close').focus({preventScroll:true});}else{drawer.inert=true;scrim.hidden=true;drawer.classList.add('is-closing');closeTimer=setTimeout(()=>{drawer.hidden=true;drawer.classList.remove('is-closing');},280);(focusTarget||toggle).focus({preventScroll:true});}}
 function openSettings(){renderIdentity();settings.showModal();}
