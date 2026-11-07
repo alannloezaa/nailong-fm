@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#15211c"><meta name="description" content="Elige una canción, disfruta su carátula y acompaña cada frase a tu ritmo.">
+ <title>Nailong FM · música a tu ritmo</title>
+ <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css">
+ <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<div id="el-flow" aria-label="Nailong FM">
+ <div class="real-background" aria-hidden="true"><img id="back-one" src="./artwork-monet-hd.jpg" alt=""><img id="back-two" alt=""></div>
+ <div class="ef-shade" aria-hidden="true"></div>
+ <header class="ef-header"><h1 class="sr-only">Reproductor de música</h1><div class="header-actions"><button id="fullscreen" class="icon-button" aria-label="Pantalla completa" type="button"><span data-icon="expand"></span></button><button id="settings" class="icon-button" aria-label="Personalizar" type="button"><span data-icon="settings"></span></button></div></header>
+ <button type="button" class="ef-library-toggle ef-glass" aria-label="Abrir canciones" aria-expanded="false" aria-controls="ef-library"><span data-icon="library"></span><span>Canciones</span></button>
+ <main class="ef-stage">
+  <div class="ef-now"><span class="ef-artist">Nsqk</span><h2 class="ef-title">MONET</h2><p class="album-name"></p></div>
+  <div class="lyric-shell"><button type="button" class="ef-lyric ef-glass" aria-label="Reproducir MONET"><span class="ef-current-line" aria-live="polite">Toca para escuchar.</span><span class="ef-lyric-foot"><span class="ef-interaction-hint">Si dejas de tocar, sigue solo.</span></span></button><label class="mode-picker"><span data-icon="hand" aria-hidden="true"></span><select id="lyric-mode" aria-label="Modo de la letra"><option value="mixed">Mixto</option><option value="manual">Manual</option><option value="auto">Automático</option></select></label></div>
+  <p id="status" class="sr-only" aria-live="polite">Lista para reproducir.</p>
+  <div id="unavailable-actions" class="inline-actions" hidden><button type="button" id="attach-current">Agregar mi audio</button><a id="apple-center" href="https://music.apple.com/mx/artist/nsqk/1480741185" target="_blank" rel="noopener">Abrir en Apple Music <span aria-hidden="true">↗</span></a></div>
+ </main>
+ <footer class="ef-footer"><div class="ef-dock ef-glass"><button type="button" class="ef-back" aria-label="Canción anterior"><span data-icon="previous"></span></button><button type="button" class="ef-play" aria-label="Reproducir"><span data-icon="play"></span></button><button type="button" class="ef-forward" aria-label="Siguiente canción"><span data-icon="next"></span></button><span class="ef-dock-divider" aria-hidden="true"></span><span class="ef-elapsed">0:00</span><input class="ef-seek" aria-label="Tiempo de la canción" type="range" min="0" max="173.453" step="0.1" value="0"><span class="ef-duration">2:53</span><button type="button" class="ef-frame" aria-label="Ocultar recuadro" aria-pressed="true"><span data-icon="frame"></span></button></div></footer>
+ <button type="button" class="ef-scrim" aria-label="Cerrar biblioteca" hidden></button>
+ <aside id="ef-library" class="ef-library" role="dialog" aria-modal="true" aria-label="Elegir una canción" hidden inert>
+  <div class="ef-library-head"><h2>Tu música</h2><button type="button" class="ef-close" aria-label="Minimizar canciones"><span data-icon="close-panel"></span></button></div>
+  <div class="library-selects"><label>Artista<select id="artist-filter"><option value="all">Todos</option><option value="Nsqk">Nsqk</option><option value="Morat">Morat</option><option value="Rels B">Rels B</option></select></label><label>Explorar<select id="catalog-view"><option value="available">Con audio</option><option value="songs">Canciones</option><option value="albums">Álbumes</option></select></label></div>
+  <input id="catalog-search" type="search" aria-label="Buscar canción o álbum" placeholder="Buscar canción o álbum" autocomplete="off">
+  <div class="ef-arrangement" role="group" aria-label="Vista de canciones"><button type="button" data-layout="stack" aria-pressed="true">Pila</button><button type="button" data-layout="row" aria-pressed="false">Fila</button></div>
+  <div class="ef-sleeves" data-layout="stack" aria-label="Carátulas"></div>
+  <div class="ef-browse-controls"><button type="button" class="ef-browse-back" aria-label="Explorar carátula anterior"><span data-icon="left"></span></button><div><span class="ef-preview-title">MONET</span><span class="ef-preview-artist">Nsqk</span></div><button type="button" class="ef-browse-next" aria-label="Explorar carátula siguiente"><span data-icon="right"></span></button></div>
+  <div class="list-heading"><span id="library-count"></span><button id="clear-album" type="button" hidden>Ver todos</button></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
+ </aside>
+ <audio id="audio" preload="metadata" playsinline src="./audio-monet.mp3"></audio>
+</div>
+<dialog id="settings-dialog" aria-labelledby="settings-heading"><form method="dialog" class="dialog-head"><h2 id="settings-heading">Personalizar</h2><button aria-label="Cerrar ajustes" class="icon-button" value="close"><span data-icon="x"></span></button></form>
+ <p class="dialog-song" id="settings-song">MONET · Nsqk</p>
+ <section><h3>Apariencia</h3><div class="appearance-fields"><label class="select-label">Modo<select id="theme-mode"><option value="dark">Oscuro</option><option value="light">Claro</option></select></label><label class="select-label">Color<select id="palette-mode"><option value="album">Según la carátula</option><option value="sage">Salvia</option><option value="sand">Arena</option><option value="sky">Cielo</option><option value="lavender">Lavanda</option><option value="rose">Rosa</option><option value="custom">Personalizado</option></select></label></div><label id="custom-color-label" class="select-label" hidden>Color pastel<input id="custom-color" type="color" value="#c6d7bf"></label><div class="palette-preview" aria-label="Colores de la apariencia"><span></span><span></span><span></span><span></span></div><label class="select-label">Tamaño de letra<select id="text-size"><option value="small">Pequeño</option><option value="medium">Mediano</option><option value="large">Grande</option></select></label></section>
+ <section><h3>Fondo</h3><label class="range-label">Desenfoque<input id="background-blur" type="range" min="0" max="30" step="1" value="5"></label><label class="select-label">Ajustar imagen<select id="background-fit"><option value="cover">Llenar pantalla</option><option value="contain">Mostrar imagen completa</option></select></label></section>
+ <section><h3>Tu música</h3><label class="file-label">Agregar audio a esta canción<input id="audio-file" type="file" accept="audio/*,video/mp4,.mp3,.m4a,.mp4"></label><span class="field-note">Solo en este dispositivo.</span><span id="file-status" class="field-note" role="status" hidden></span></section>
+ <nav class="artist-links" aria-label="Escuchar al artista"><a id="apple-link" target="_blank" rel="noopener" href="https://music.apple.com/mx/artist/nsqk/1480741185">Nsqk en Apple Music ↗</a><a id="spotify-link" target="_blank" rel="noopener" href="https://open.spotify.com/artist/1jtvmXiemNFkPO11NMdjfu">Nsqk en Spotify ↗</a></nav>
+</dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript>Activa JavaScript para usar el reproductor. <a href="./audio-monet.mp3">Escuchar MONET</a></noscript>
+</body></html>

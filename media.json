@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "tracks": {
+    "monet": {
+      "audio": "./audio-monet.mp3",
+      "lyricsId": 24446774,
+      "duration": 173.4530612244898,
+      "sha256": "f8956d448cc104cfb1852249a0a9b4e27de1aa8265e6762658cb24e0d969c3ea"
+    }
+  }
+}
