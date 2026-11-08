@@ -84,6 +84,7 @@ export class PlaybackMixer{
   })();
   this.preparing={id,revision,promise};return promise;
  }
+ refreshQueue(){this.operation++;this.prepareRevision++;this.preparing=null;this.next=null;this.failedNext=null;if(!this.fade){this._clear(1-this.index);if(this.options.continuous)void this.ensurePrepared();}}
  async play(){
   if(!this.record?.url)return;
   this.paused=false;this.failedNext=null;

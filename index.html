@@ -7,14 +7,14 @@
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-4">
- <script type="module" src="./app.mjs?v=20261107-4"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-5">
+ <script type="module" src="./app.mjs?v=20261107-5"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
  <div class="real-background" aria-hidden="true"><img id="back-one" src="./artwork-monet-hd.jpg" alt=""><img id="back-two" alt=""></div>
  <div class="ef-shade" aria-hidden="true"></div>
- <header class="ef-header"><h1 class="sr-only">Reproductor de música</h1><div class="header-actions"><button id="fullscreen" class="icon-button" aria-label="Pantalla completa" type="button"><span data-icon="expand"></span></button><button id="settings" class="icon-button" aria-label="Personalizar" type="button"><span data-icon="settings"></span></button></div></header>
+ <header class="ef-header"><h1 class="sr-only">Reproductor de música</h1><div class="header-actions"><button id="open-playlist" class="icon-button playlist-toggle" aria-label="Abrir mi lista" aria-controls="ef-library" aria-expanded="false" type="button"><span data-icon="queue"></span><span id="playlist-badge" aria-hidden="true" hidden>0</span></button><button id="fullscreen" class="icon-button" aria-label="Pantalla completa" type="button"><span data-icon="expand"></span></button><button id="settings" class="icon-button" aria-label="Personalizar" type="button"><span data-icon="settings"></span></button></div></header>
  <button type="button" class="ef-library-toggle ef-glass" aria-label="Abrir canciones" aria-expanded="false" aria-controls="ef-library"><span data-icon="library"></span><span>Canciones</span></button>
  <main class="ef-stage">
   <div class="ef-now"><span class="ef-artist">Nsqk</span><h2 class="ef-title">MONET</h2><p class="album-name"></p></div>
@@ -27,13 +27,19 @@
  <button type="button" class="ef-scrim" aria-label="Cerrar biblioteca" hidden></button>
  <aside id="ef-library" class="ef-library" role="dialog" aria-modal="true" aria-label="Elegir una canción" hidden inert>
   <div class="ef-library-head"><h2>Tu música</h2><button type="button" class="ef-close" aria-label="Minimizar canciones"><span data-icon="close-panel"></span></button></div>
+  <div class="library-tabs" role="group" aria-label="Secciones de tu música"><button id="browse-tab" type="button" aria-pressed="true">Explorar</button><button id="playlist-tab" type="button" aria-pressed="false">Mi lista <span id="playlist-count">0</span></button></div>
+  <div id="browse-panel" class="library-panel">
   <button id="clear-album" class="back-albums" type="button" hidden><span data-icon="left" aria-hidden="true"></span><span>Volver a álbumes</span></button>
-  <div class="library-selects"><label>Artista<select id="artist-filter"><option value="all">Todos</option><option value="Nsqk">Nsqk</option><option value="Morat">Morat</option><option value="Rels B">Rels B</option><option value="Otros">Otros</option></select></label><label>Explorar<select id="catalog-view"><option value="available">Con audio</option><option value="songs">Canciones</option><option value="albums">Álbumes</option></select></label></div>
-  <input id="catalog-search" type="search" aria-label="Buscar canción o álbum" placeholder="Buscar canción o álbum" autocomplete="off">
+  <div class="catalog-tabs" role="group" aria-label="Explorar el catálogo"><button type="button" data-browse-view="songs" aria-pressed="true">Canciones</button><button type="button" data-browse-view="albums" aria-pressed="false">Álbumes</button></div>
+  <div class="library-selects"><label>Artista<select id="artist-filter"><option value="all">Todos</option><option value="Nsqk">Nsqk</option><option value="Morat">Morat</option><option value="Rels B">Rels B</option><option value="Otros">Otros</option></select></label></div>
+  <input id="catalog-search" type="search" aria-label="Buscar canción, álbum o artista" placeholder="Buscar canción, álbum o artista" autocomplete="off">
   <div class="ef-arrangement" role="group" aria-label="Vista de canciones"><button type="button" data-layout="stack" aria-pressed="true">Pila</button><button type="button" data-layout="row" aria-pressed="false">Fila</button></div>
   <div class="ef-sleeves" data-layout="stack" aria-label="Carátulas"></div>
   <div class="ef-browse-controls"><button type="button" class="ef-browse-back" aria-label="Explorar carátula anterior"><span data-icon="left"></span></button><div><span class="ef-preview-title">MONET</span><span class="ef-preview-artist">Nsqk</span></div><button type="button" class="ef-browse-next" aria-label="Explorar carátula siguiente"><span data-icon="right"></span></button></div>
-  <div class="list-heading"><span id="library-count"></span></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
+  <button id="add-preview" class="add-preview" type="button"><span data-icon="plus"></span><span>Agregar a mi lista</span></button>
+  <div class="list-heading"><span id="library-count"></span><button id="reset-catalog" type="button" hidden>Ver todo</button></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
+  </div>
+  <section id="playlist-panel" class="library-panel playlist-panel" aria-label="Mi lista de reproducción" hidden><div class="playlist-intro"><h3>Mi lista</h3><p id="playlist-summary">Elige lo que quieres escuchar.</p></div><button id="play-playlist" class="playlist-play" type="button"><span data-icon="play"></span><span>Reproducir lista</span></button><button id="exit-playlist" class="playlist-exit" type="button" hidden>Volver a la reproducción del catálogo</button><p id="playlist-empty" class="playlist-empty">Tu próxima mezcla empieza aquí.<br>Agrega canciones con el botón + en Explorar.</p><ol id="playlist-songs" class="playlist-songs" aria-label="Canciones en orden de reproducción"></ol><p class="playlist-note">Arrastra desde los puntos para ordenar.<br>Se guarda en este dispositivo.</p></section>
  </aside>
  <audio id="audio" preload="metadata" playsinline src="./audio-monet.mp3"></audio>
  <audio id="audio-next" preload="none" playsinline></audio>
