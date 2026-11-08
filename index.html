@@ -7,8 +7,8 @@
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-2">
- <script type="module" src="./app.mjs?v=20261107-2"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-3">
+ <script type="module" src="./app.mjs?v=20261107-3"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -27,12 +27,13 @@
  <button type="button" class="ef-scrim" aria-label="Cerrar biblioteca" hidden></button>
  <aside id="ef-library" class="ef-library" role="dialog" aria-modal="true" aria-label="Elegir una canción" hidden inert>
   <div class="ef-library-head"><h2>Tu música</h2><button type="button" class="ef-close" aria-label="Minimizar canciones"><span data-icon="close-panel"></span></button></div>
+  <button id="clear-album" class="back-albums" type="button" hidden><span data-icon="left" aria-hidden="true"></span><span>Volver a álbumes</span></button>
   <div class="library-selects"><label>Artista<select id="artist-filter"><option value="all">Todos</option><option value="Nsqk">Nsqk</option><option value="Morat">Morat</option><option value="Rels B">Rels B</option><option value="Otros">Otros</option></select></label><label>Explorar<select id="catalog-view"><option value="available">Con audio</option><option value="songs">Canciones</option><option value="albums">Álbumes</option></select></label></div>
   <input id="catalog-search" type="search" aria-label="Buscar canción o álbum" placeholder="Buscar canción o álbum" autocomplete="off">
   <div class="ef-arrangement" role="group" aria-label="Vista de canciones"><button type="button" data-layout="stack" aria-pressed="true">Pila</button><button type="button" data-layout="row" aria-pressed="false">Fila</button></div>
   <div class="ef-sleeves" data-layout="stack" aria-label="Carátulas"></div>
   <div class="ef-browse-controls"><button type="button" class="ef-browse-back" aria-label="Explorar carátula anterior"><span data-icon="left"></span></button><div><span class="ef-preview-title">MONET</span><span class="ef-preview-artist">Nsqk</span></div><button type="button" class="ef-browse-next" aria-label="Explorar carátula siguiente"><span data-icon="right"></span></button></div>
-  <div class="list-heading"><span id="library-count"></span><button id="clear-album" type="button" hidden>Ver todos</button></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
+  <div class="list-heading"><span id="library-count"></span></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
  </aside>
  <audio id="audio" preload="metadata" playsinline src="./audio-monet.mp3"></audio>
 </div>
