@@ -548,29 +548,29 @@
       }
     },
     "6769182621": {
-      "audio": "./audio-6769182621.mp3",
-      "duration": 233.6130612244898,
-      "bytes": 3690646,
-      "sha256": "76c946312752e9fbb065c407f1bec7e3ed4981df2ad270d27eb999cd130f92da",
+      "audio": "./audio-6769182621.mp3?v=fc3244f6",
+      "duration": 191.97387755102042,
+      "bytes": 2855351,
+      "sha256": "fc3244f6d7a1a473a9f44cd64c7e7b164ff61e2f842c4ed83e2d308606fc64b4",
       "encoding": {
         "format": "MP3",
-        "bitrate": 117291,
+        "bitrate": 114153,
         "sampleRate": 44100,
         "channels": 2
       },
-      "lyricsId": 22265564,
+      "lyricsId": 5210839,
       "lyricsIdentity": {
         "title": "Si En Tu Mente Estuve",
         "artist": "Nsqk",
-        "duration": 233.560816
+        "duration": 192.0
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 29.889
+        "offset": -0.346
       },
       "mixing": {
-        "firstSound": 0.053,
-        "lastSound": 227.005
+        "firstSound": 0.16,
+        "lastSound": 190.76
       }
     },
     "monet": {
