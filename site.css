@@ -39,3 +39,24 @@
 #el-flow .ef-current-line{font-size:var(--lyric-size,clamp(28px,3.1vw,39px))}#el-flow[data-text-size=small]{--lyric-size:clamp(24px,2.5vw,32px)}#el-flow[data-text-size=large]{--lyric-size:clamp(32px,3.6vw,46px)}.artist-links{display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--ui-border);padding-top:17px}.artist-links a{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:10px 13px;border:1px solid var(--ui-border);border-radius:12px;background:var(--ui-control);color:var(--ui-ink);text-decoration:none;font-size:13px}.artist-links a:hover{background:var(--ui-raised)}@media(max-width:700px){#el-flow .ef-current-line{font-size:var(--lyric-size,29px)}#el-flow[data-text-size=small]{--lyric-size:25px}#el-flow[data-text-size=large]{--lyric-size:34px}#settings-dialog .select-label select{font-size:16px;min-height:44px}#settings-dialog input[type=file]::file-selector-button{min-height:44px}.artist-links a{font-size:14px}}
 
 #el-flow .mode-picker{display:flex;align-items:center;gap:8px;width:149px;max-width:none;min-height:44px;height:44px;padding:0 12px;font-size:13px;cursor:pointer}#el-flow .mode-picker .mode-title{flex:1;white-space:nowrap;pointer-events:none}#el-flow .mode-picker .mode-chevron{transform:rotate(-90deg)}#el-flow .mode-picker .mode-chevron svg{width:14px;height:14px}#el-flow .mode-picker select{position:absolute;inset:0;z-index:1;display:block;width:100%;max-width:none;height:100%;min-height:100%;padding:0;margin:0;border:0;border-radius:inherit;opacity:0;cursor:pointer;font-size:16px}#el-flow .mode-picker:focus-within{outline:3px solid var(--ui-focus);outline-offset:4px}@media(max-width:700px){#el-flow .mode-picker{width:164px;font-size:16px}}
+
+#el-flow .catalog-filters{flex:none}#el-flow .list-actions{display:flex;align-items:center;gap:6px}#el-flow #add-visible-album{min-height:44px;padding:6px 9px;color:var(--ui-accent)}#el-flow #add-visible-album:disabled{opacity:.45}
+@media(max-width:700px){
+ #el-flow .ef-library{position:fixed;inset:max(8px,env(safe-area-inset-top)) 8px max(8px,env(safe-area-inset-bottom));width:auto;max-width:none;height:auto;max-height:none;padding:14px 16px 12px;overflow:hidden}
+ #el-flow .catalog-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(112px,40%);gap:8px;margin-top:9px}
+ #el-flow .catalog-filters .catalog-tabs{align-self:end;gap:5px;margin:0}
+ #el-flow .catalog-filters .catalog-tabs button{font-size:13px;min-height:44px;padding:8px 4px}
+ #el-flow .catalog-filters .library-selects{margin:0;gap:0}
+ #el-flow .catalog-filters .library-selects label{font-size:11px;gap:3px}
+ #el-flow .catalog-filters select{min-height:44px}
+ #el-flow .catalog-filters #catalog-search{grid-column:1/-1;margin:0;min-height:44px}
+ #el-flow .ef-song-names{flex:1 1 0;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding-bottom:12px;scroll-padding-block:8px}
+ #el-flow .ef-song-names .ef-name{min-height:48px;font-size:14px;line-height:1.45;padding:10px 9px}
+ #el-flow .ef-song-names .song-add{height:48px;width:48px}
+ #el-flow .list-heading{min-height:44px;margin-top:6px;padding:0 2px}
+ #el-flow .ef-library[data-picking=true] .playlist-picker-head{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+ #el-flow .ef-library[data-picking=true] .playlist-picker-head button{font-size:12px;padding:8px 10px}
+ #el-flow .ef-library[data-picking=true] #picker-count{max-width:85px;font-size:11px;line-height:1.4;text-align:right}
+ #el-flow .ef-library[data-picking=true] .ef-arrangement,#el-flow .ef-library[data-picking=true] .ef-sleeves,#el-flow .ef-library[data-picking=true] .ef-browse-controls,#el-flow .ef-library[data-picking=true] #add-preview{display:none!important}
+ #el-flow .ef-library[data-picking=true] .back-albums{margin-top:6px;min-height:44px}
+}

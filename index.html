@@ -5,10 +5,11 @@
  <meta name="theme-color" content="#15211c"><meta name="description" content="Elige una canción, disfruta su carátula y acompaña cada frase a tu ritmo.">
  <title>Nailong FM · música a tu ritmo</title>
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
+ <link rel="canonical" href="https://alannloezaa.github.io/nailong-fm/">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-6">
- <script type="module" src="./app.mjs?v=20261107-6"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261108-1">
+ <script type="module" src="./app.mjs?v=20261108-1"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -31,14 +32,16 @@
   <div id="playlist-picker-head" class="playlist-picker-head" hidden><button id="finish-adding" type="button"><span data-icon="left"></span><span>Listo, volver a Mi lista</span></button><span id="picker-count" role="status"></span></div>
   <div id="browse-panel" class="library-panel">
   <button id="clear-album" class="back-albums" type="button" hidden><span data-icon="left" aria-hidden="true"></span><span>Volver a álbumes</span></button>
+  <div class="catalog-filters">
   <div class="catalog-tabs" role="group" aria-label="Explorar el catálogo"><button type="button" data-browse-view="songs" aria-pressed="true">Canciones</button><button type="button" data-browse-view="albums" aria-pressed="false">Álbumes</button></div>
   <div class="library-selects"><label>Artista<select id="artist-filter"><option value="all">Todos</option><option value="Nsqk">Nsqk</option><option value="Morat">Morat</option><option value="Rels B">Rels B</option><option value="Otros">Otros</option></select></label></div>
   <input id="catalog-search" type="search" aria-label="Buscar canción, álbum o artista" placeholder="Buscar canción, álbum o artista" autocomplete="off">
+  </div>
   <div class="ef-arrangement" role="group" aria-label="Vista de canciones"><button type="button" data-layout="stack" aria-pressed="true">Pila</button><button type="button" data-layout="row" aria-pressed="false">Fila</button></div>
   <div class="ef-sleeves" data-layout="stack" aria-label="Carátulas"></div>
   <div class="ef-browse-controls"><button type="button" class="ef-browse-back" aria-label="Explorar carátula anterior"><span data-icon="left"></span></button><div><span class="ef-preview-title">MONET</span><span class="ef-preview-artist">Nsqk</span></div><button type="button" class="ef-browse-next" aria-label="Explorar carátula siguiente"><span data-icon="right"></span></button></div>
   <button id="add-preview" class="add-preview" type="button"><span data-icon="plus"></span><span>Agregar a mi lista</span></button>
-  <div class="list-heading"><span id="library-count"></span><button id="reset-catalog" type="button" hidden>Ver todo</button></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
+  <div class="list-heading"><span id="library-count"></span><div class="list-actions"><button id="add-visible-album" type="button" hidden>Agregar todas</button><button id="reset-catalog" type="button" hidden>Ver todo</button></div></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
   </div>
   <section id="playlist-panel" class="library-panel playlist-panel" aria-label="Mi lista de reproducción" hidden><div class="playlist-intro"><h3>Mi lista</h3><p id="playlist-summary">Elige lo que quieres escuchar.</p></div><button id="playlist-add" class="playlist-add" type="button"><span data-icon="plus"></span><span>Agregar música</span></button><button id="play-playlist" class="playlist-play" type="button"><span data-icon="play"></span><span>Reproducir lista</span></button><button id="exit-playlist" class="playlist-exit" type="button" hidden>Volver a la reproducción del catálogo</button><p id="playlist-empty" class="playlist-empty">Tu próxima mezcla empieza aquí.<br>Pulsa Agregar música para elegir canciones o álbumes.</p><ol id="playlist-songs" class="playlist-songs" aria-label="Canciones en orden de reproducción"></ol><p class="playlist-note">Arrastra desde los puntos para ordenar.<br>Se guarda en este dispositivo.</p></section>
  </aside>
