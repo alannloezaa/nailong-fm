@@ -7,8 +7,8 @@
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-3">
- <script type="module" src="./app.mjs?v=20261107-3"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-4">
+ <script type="module" src="./app.mjs?v=20261107-4"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -36,9 +36,11 @@
   <div class="list-heading"><span id="library-count"></span></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
  </aside>
  <audio id="audio" preload="metadata" playsinline src="./audio-monet.mp3"></audio>
+ <audio id="audio-next" preload="none" playsinline></audio>
 </div>
 <dialog id="settings-dialog" aria-labelledby="settings-heading"><form method="dialog" class="dialog-head"><h2 id="settings-heading">Personalizar</h2><button aria-label="Cerrar ajustes" class="icon-button" value="close"><span data-icon="x"></span></button></form>
  <p class="dialog-song" id="settings-song">MONET · Nsqk</p>
+ <section><h3>Reproducción</h3><label class="toggle-setting"><span>Seguir con la siguiente canción</span><input id="continuous-playback" type="checkbox" checked></label><span id="next-song" class="field-note"></span><label class="select-label">Mezcla<select id="mix-mode"><option value="off">Sin mezcla</option><option value="crossfade">Crossfade</option><option value="auto">AutoMix suave</option></select></label><label class="range-label" for="crossfade-seconds">Duración de la transición<output id="crossfade-output" for="crossfade-seconds">5 s</output><input id="crossfade-seconds" aria-label="Duración de la transición" aria-describedby="mix-note" type="range" min="0" max="12" step="0.5" value="5"></label><p id="mix-note" class="field-note"></p><label class="range-label" for="playback-volume">Volumen<output id="volume-output" for="playback-volume">100%</output><input id="playback-volume" aria-label="Volumen" type="range" min="0" max="100" step="1" value="100"></label><label class="toggle-setting"><span>Silenciar</span><input id="playback-muted" type="checkbox"></label><span class="field-note">Se conserva la calidad del archivo original.</span></section>
  <section><h3>Apariencia</h3><div class="appearance-fields"><label class="select-label">Modo<select id="theme-mode"><option value="dark">Oscuro</option><option value="light">Claro</option></select></label><label class="select-label">Color<select id="palette-mode"><option value="album">Según la carátula</option><option value="sage">Salvia</option><option value="sand">Arena</option><option value="sky">Cielo</option><option value="lavender">Lavanda</option><option value="rose">Rosa</option><option value="custom">Personalizado</option></select></label></div><label id="custom-color-label" class="select-label" hidden>Color pastel<input id="custom-color" type="color" value="#c6d7bf"></label><div class="palette-preview" aria-label="Colores de la apariencia"><span></span><span></span><span></span><span></span></div><label class="select-label">Tamaño de letra<select id="text-size"><option value="small">Pequeño</option><option value="medium">Mediano</option><option value="large">Grande</option></select></label></section>
  <section><h3>Fondo</h3><label class="range-label">Desenfoque<input id="background-blur" type="range" min="0" max="30" step="1" value="5"></label><label class="select-label">Ajustar imagen<select id="background-fit"><option value="cover">Llenar pantalla</option><option value="contain">Mostrar imagen completa</option></select></label></section>
  <section><h3>Tu música</h3><label class="file-label">Agregar audio a esta canción<input id="audio-file" type="file" accept="audio/*,video/mp4,.mp3,.m4a,.mp4"></label><span class="field-note">Solo en este dispositivo.</span><span id="file-status" class="field-note" role="status" hidden></span></section>

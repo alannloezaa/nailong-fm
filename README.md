@@ -13,3 +13,5 @@ Los archivos agregados desde Personalizar se guardan solo en el dispositivo actu
 Spotify es la opción principal. Los enlaces de Spotify y Apple Music abren canciones o búsquedas; no conectan cuentas.
 
 Esta exportación contiene los recursos en una única carpeta y conserva los audios sin recomprimir.
+
+En Personalizar → Reproducción puedes activar la siguiente canción automática y elegir Sin mezcla, Crossfade o AutoMix suave. La transición se ajusta de 0 a 12 segundos. AutoMix acorta silencios detectados; no sincroniza BPM. Las preferencias, volumen y silencio se guardan en este dispositivo. Los MP3 conservan su calidad original; no se convierten a lossless.

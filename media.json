@@ -21,6 +21,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.106,
+        "lastSound": 208.51
       }
     },
     "1733775118": {
@@ -43,6 +47,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 12.247
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 235.286
       }
     },
     "1648886750": {
@@ -65,6 +73,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.262,
+        "lastSound": 182.048
       }
     },
     "1438883873": {
@@ -87,6 +99,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.288,
+        "lastSound": 211.645
       }
     },
     "1438883871": {
@@ -109,6 +125,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.315,
+        "lastSound": 172.305
       }
     },
     "1438883872": {
@@ -131,6 +151,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 11.35
+      },
+      "mixing": {
+        "firstSound": 0.732,
+        "lastSound": 230.27
       }
     },
     "1440840270": {
@@ -153,6 +177,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 2.49
+      },
+      "mixing": {
+        "firstSound": 2.848,
+        "lastSound": 240.275
       }
     },
     "1389954192": {
@@ -175,6 +203,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 1.647,
+        "lastSound": 218.672
       }
     },
     "1438883869": {
@@ -197,6 +229,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 6.406
+      },
+      "mixing": {
+        "firstSound": 0.602,
+        "lastSound": 233.144
       }
     },
     "1440840253": {
@@ -219,6 +255,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 3.987
+      },
+      "mixing": {
+        "firstSound": 4.181,
+        "lastSound": 254.251
       }
     },
     "1484464301": {
@@ -241,6 +281,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 1.02,
+        "lastSound": 203.364
       }
     },
     "1489706222": {
@@ -263,6 +307,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 1.046,
+        "lastSound": 228.886
       }
     },
     "6768768287": {
@@ -285,6 +333,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 188.266
       }
     },
     "6768693065": {
@@ -307,6 +359,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 166.819
       }
     },
     "1698028263": {
@@ -329,6 +385,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.262,
+        "lastSound": 212.246
       }
     },
     "6768720198": {
@@ -351,6 +411,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 3.93
+      },
+      "mixing": {
+        "firstSound": 0.576,
+        "lastSound": 189.337
       }
     },
     "6813620586": {
@@ -373,6 +437,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 196.494
       }
     },
     "6813620415": {
@@ -395,6 +463,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.158,
+        "lastSound": 193.725
       }
     },
     "6820282590": {
@@ -417,6 +489,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -0.742
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 277.657
       }
     },
     "6813620420": {
@@ -439,6 +515,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.106,
+        "lastSound": 194.848
       }
     },
     "6769182949": {
@@ -461,6 +541,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 229.408
       }
     },
     "6769182621": {
@@ -483,6 +567,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 29.889
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 227.005
       }
     },
     "monet": {
@@ -505,6 +593,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 173.01
       }
     },
     "6813620405": {
@@ -527,6 +619,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.341,
+        "lastSound": 221.232
       }
     },
     "6813620576": {
@@ -549,6 +645,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 177.634
       }
     },
     "6768766482": {
@@ -571,6 +671,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 221.18
       }
     },
     "1888034835": {
@@ -593,6 +697,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.027,
+        "lastSound": 201.875
       }
     },
     "1891538041": {
@@ -615,6 +723,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.053,
+        "lastSound": 249.47
       }
     },
     "1496488402": {
@@ -637,6 +749,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 209.033
       }
     },
     "1618508163": {
@@ -659,6 +775,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.393,
+        "lastSound": 132.886
       }
     },
     "1489755052": {
@@ -681,6 +801,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.811,
+        "lastSound": 229.356
       }
     },
     "1489751898": {
@@ -703,6 +827,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.184,
+        "lastSound": 191.426
       }
     },
     "1489752614": {
@@ -725,6 +853,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.157,
+        "lastSound": 232.882
       }
     },
     "1740807800": {
@@ -747,6 +879,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 1.15,
+        "lastSound": 138.189
       }
     },
     "1500960878": {
@@ -769,6 +905,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -0.82
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 163.684
       }
     },
     "1489755046": {
@@ -791,6 +931,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 186.045
       }
     },
     "1489752087": {
@@ -813,6 +957,10 @@
       "lyricsTiming": {
         "scale": 1.018115,
         "offset": -1.868
+      },
+      "mixing": {
+        "firstSound": 0.341,
+        "lastSound": 232.778
       }
     },
     "1636552880": {
@@ -835,6 +983,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -0.837
+      },
+      "mixing": {
+        "firstSound": 0.106,
+        "lastSound": 109.663
       }
     },
     "1675865125": {
@@ -857,6 +1009,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.027,
+        "lastSound": 149.134
       }
     },
     "1740811961": {
@@ -879,6 +1035,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.027,
+        "lastSound": 220.814
       }
     },
     "1815278975": {
@@ -901,6 +1061,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.68,
+        "lastSound": 106.92
       }
     },
     "1482661348": {
@@ -923,6 +1087,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 2.065,
+        "lastSound": 176.641
       }
     },
     "1781234489": {
@@ -945,6 +1113,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.601,
+        "lastSound": 144.889
       }
     },
     "1447554997": {
@@ -967,6 +1139,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.131,
+        "lastSound": 226.743
       }
     },
     "450171018": {
@@ -989,6 +1165,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -0.7
+      },
+      "mixing": {
+        "firstSound": 0.602,
+        "lastSound": 197.644
       }
     },
     "179573237": {
@@ -1011,6 +1191,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -3.175
+      },
+      "mixing": {
+        "firstSound": 0.863,
+        "lastSound": 282.463
       }
     },
     "1716321157": {
@@ -1033,6 +1217,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": -2.34
+      },
+      "mixing": {
+        "firstSound": 0.21,
+        "lastSound": 181.735
       }
     },
     "1699394154": {
@@ -1055,6 +1243,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 155.43
       }
     },
     "1761909328": {
@@ -1077,6 +1269,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.079,
+        "lastSound": 165.748
       }
     },
     "1814146674": {
@@ -1099,6 +1295,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.471,
+        "lastSound": 214.701
       }
     },
     "1787022980": {
@@ -1121,6 +1321,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.184,
+        "lastSound": 199.002
       }
     },
     "1787022999": {
@@ -1143,6 +1347,10 @@
       "lyricsTiming": {
         "scale": 1,
         "offset": 0
+      },
+      "mixing": {
+        "firstSound": 0.132,
+        "lastSound": 234.189
       }
     }
   }
