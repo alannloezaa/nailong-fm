@@ -7,8 +7,8 @@
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-5">
- <script type="module" src="./app.mjs?v=20261107-5"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261107-6">
+ <script type="module" src="./app.mjs?v=20261107-6"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -28,6 +28,7 @@
  <aside id="ef-library" class="ef-library" role="dialog" aria-modal="true" aria-label="Elegir una canción" hidden inert>
   <div class="ef-library-head"><h2>Tu música</h2><button type="button" class="ef-close" aria-label="Minimizar canciones"><span data-icon="close-panel"></span></button></div>
   <div class="library-tabs" role="group" aria-label="Secciones de tu música"><button id="browse-tab" type="button" aria-pressed="true">Explorar</button><button id="playlist-tab" type="button" aria-pressed="false">Mi lista <span id="playlist-count">0</span></button></div>
+  <div id="playlist-picker-head" class="playlist-picker-head" hidden><button id="finish-adding" type="button"><span data-icon="left"></span><span>Listo, volver a Mi lista</span></button><span id="picker-count" role="status"></span></div>
   <div id="browse-panel" class="library-panel">
   <button id="clear-album" class="back-albums" type="button" hidden><span data-icon="left" aria-hidden="true"></span><span>Volver a álbumes</span></button>
   <div class="catalog-tabs" role="group" aria-label="Explorar el catálogo"><button type="button" data-browse-view="songs" aria-pressed="true">Canciones</button><button type="button" data-browse-view="albums" aria-pressed="false">Álbumes</button></div>
@@ -39,7 +40,7 @@
   <button id="add-preview" class="add-preview" type="button"><span data-icon="plus"></span><span>Agregar a mi lista</span></button>
   <div class="list-heading"><span id="library-count"></span><button id="reset-catalog" type="button" hidden>Ver todo</button></div><div class="ef-song-names" aria-label="Elegir por nombre"></div>
   </div>
-  <section id="playlist-panel" class="library-panel playlist-panel" aria-label="Mi lista de reproducción" hidden><div class="playlist-intro"><h3>Mi lista</h3><p id="playlist-summary">Elige lo que quieres escuchar.</p></div><button id="play-playlist" class="playlist-play" type="button"><span data-icon="play"></span><span>Reproducir lista</span></button><button id="exit-playlist" class="playlist-exit" type="button" hidden>Volver a la reproducción del catálogo</button><p id="playlist-empty" class="playlist-empty">Tu próxima mezcla empieza aquí.<br>Agrega canciones con el botón + en Explorar.</p><ol id="playlist-songs" class="playlist-songs" aria-label="Canciones en orden de reproducción"></ol><p class="playlist-note">Arrastra desde los puntos para ordenar.<br>Se guarda en este dispositivo.</p></section>
+  <section id="playlist-panel" class="library-panel playlist-panel" aria-label="Mi lista de reproducción" hidden><div class="playlist-intro"><h3>Mi lista</h3><p id="playlist-summary">Elige lo que quieres escuchar.</p></div><button id="playlist-add" class="playlist-add" type="button"><span data-icon="plus"></span><span>Agregar música</span></button><button id="play-playlist" class="playlist-play" type="button"><span data-icon="play"></span><span>Reproducir lista</span></button><button id="exit-playlist" class="playlist-exit" type="button" hidden>Volver a la reproducción del catálogo</button><p id="playlist-empty" class="playlist-empty">Tu próxima mezcla empieza aquí.<br>Pulsa Agregar música para elegir canciones o álbumes.</p><ol id="playlist-songs" class="playlist-songs" aria-label="Canciones en orden de reproducción"></ol><p class="playlist-note">Arrastra desde los puntos para ordenar.<br>Se guarda en este dispositivo.</p></section>
  </aside>
  <audio id="audio" preload="metadata" playsinline src="./audio-monet.mp3"></audio>
  <audio id="audio-next" preload="none" playsinline></audio>
