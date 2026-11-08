@@ -21,7 +21,12 @@ async function getJson(url,signal){
   if(!response.ok){const error=new Error(`lyrics-${response.status}`);error.status=response.status;throw error;}return response.json();
  }
 }
-export function retimeLines(lines,{scale=1,offset=0}={}){const speed=Number.isFinite(scale)&&scale>0?scale:1,shift=Number.isFinite(offset)?offset:0;return lines.map(line=>({...line,time:Math.max(0,Math.round((line.time*speed+shift)*1000)/1000)}));}
+export function retimeLines(lines,{scale=1,offset=0,sections=[]}={}){
+ const speed=Number.isFinite(scale)&&scale>0?scale:1,shift=Number.isFinite(offset)?offset:0;
+ const ranges=Array.isArray(sections)?sections.filter(section=>Number.isFinite(section.from)&&Number.isFinite(section.offset)).sort((a,b)=>a.from-b.from):[];
+ let previous=0;
+ return lines.map(line=>{const section=ranges.findLast(section=>line.time>=section.from),time=Math.max(previous,0,Math.round((line.time*speed+shift+(section?.offset||0))*1000)/1000);previous=time;return {...line,time};});
+}
 function resultOf(record,approximate=false){const lines=parseLrc(record.syncedLyrics||'');if(lines.length)return {kind:'synced',lines,recordId:record.id,approximate};const plain=String(record.plainLyrics||'').split(/\r?\n/).map(text=>text.trim()).filter(text=>text&&!/^\[.*\]$/.test(text)).map(text=>({time:0,text}));if(record.instrumental)return {kind:'instrumental',lines:[],recordId:record.id};return {kind:plain.length?'plain':'none',lines:plain,recordId:record.id};}
 export async function loadLyrics(track,{local={},configured={},signal}={}){
  if(local.lrc){const lines=parseLrc(local.lrc);return {kind:lines.length?'synced':'none',lines,local:true};}

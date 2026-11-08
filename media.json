@@ -514,7 +514,7 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": -0.55
       },
       "mixing": {
         "firstSound": 0.106,
@@ -592,7 +592,17 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "sections": [
+          {
+            "from": 0,
+            "offset": -0.97
+          },
+          {
+            "from": 84,
+            "offset": -0.22
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.053,
@@ -852,7 +862,7 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": -0.15
       },
       "mixing": {
         "firstSound": 0.157,
@@ -1060,7 +1070,7 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": -0.45
       },
       "mixing": {
         "firstSound": 0.68,
@@ -1138,7 +1148,7 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": -0.18
       },
       "mixing": {
         "firstSound": 0.131,
