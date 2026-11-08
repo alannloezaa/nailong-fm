@@ -14,6 +14,8 @@ Spotify es la opción principal. Los enlaces de Spotify y Apple Music abren canc
 
 Esta exportación contiene los recursos en una única carpeta y conserva los audios sin recomprimir.
 
+Sincronización por frase: 36 marcas revisadas en 16 canciones, asociadas a la marca y huella del texto original. Labios Compartidos usa el cierre recortado del MP3 proporcionado. La caché distingue los cambios de referencia, tiempos y audio local. Los controles manuales se conservan.
+
 Reproducción móvil: iPhone/iPad y Android conservan una ruta HTMLAudio nativa y reutilizan el mismo elemento al avanzar. La mezcla con superposición queda para computadora. Se declaran controles Media Session de reproducción, pausa, cambio de canción y posición. Las pausas del sistema se respetan. El bloqueo físico de cada teléfono requiere comprobación en ese dispositivo; una emulación de escritorio no lo certifica.
 
 En Personalizar → Reproducción puedes activar la siguiente canción automática y elegir Sin mezcla, Crossfade o AutoMix suave. La transición se ajusta de 0 a 12 segundos. AutoMix acorta silencios detectados; no sincroniza BPM. Las preferencias, volumen y silencio se guardan en este dispositivo. Los MP3 conservan su calidad original; no se convierten a lossless.

@@ -1,5 +1,5 @@
 import {readTrack,saveTrack,localAudioIds} from './storage.mjs';
-import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261108-2';
+import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261108-3';
 import {buildTheme,dominantHue,pastelHues,rgbHue,hslToRgb,cssRgb,rgbHex} from './theme.mjs';
 import {PlaybackMixer,usesSystemVolume} from './mixer.mjs?v=20261108-2';
 import {connectMediaSession} from './media-session.mjs?v=20261108-2';

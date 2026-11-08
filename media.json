@@ -72,7 +72,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 10.68,
+            "key": "8261b2c3",
+            "time": 9.82
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.262,
@@ -98,7 +105,24 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 86.0,
+            "key": "53dcac09",
+            "time": 85.335
+          },
+          {
+            "source": 116.87,
+            "key": "b575450d",
+            "time": 116.18
+          },
+          {
+            "source": 180.11,
+            "key": "81453303",
+            "time": 179.46
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.288,
@@ -202,7 +226,29 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 4.55,
+            "key": "af37d39c",
+            "time": 6.04
+          },
+          {
+            "source": 7.1,
+            "key": "badb4079",
+            "time": 8.225
+          },
+          {
+            "source": 12.26,
+            "key": "c405cc33",
+            "time": 13.61
+          },
+          {
+            "source": 177.22,
+            "key": "4b6bb589",
+            "time": 178.325
+          }
+        ]
       },
       "mixing": {
         "firstSound": 1.647,
@@ -384,7 +430,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 153.7,
+            "key": "8b68a769",
+            "time": 152.97
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.262,
@@ -680,7 +733,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 35.97,
+            "key": "8905b08e",
+            "time": 34.99
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.053,
@@ -784,7 +844,24 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 103.68,
+            "key": "dbc95f0e",
+            "time": 104.412
+          },
+          {
+            "source": 108.37,
+            "key": "a02b47bb",
+            "time": 109.247
+          },
+          {
+            "source": 110.47,
+            "key": "e2475b10",
+            "time": 111.23
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.393,
@@ -810,7 +887,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 180.32,
+            "key": "adfeb31e",
+            "time": 179.52
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.811,
@@ -862,7 +946,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": -0.15
+        "offset": -0.15,
+        "cues": [
+          {
+            "source": 136.65,
+            "key": "2a3d3925",
+            "time": 135.815
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.157,
@@ -888,7 +979,19 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 94.32,
+            "key": "9036e67b",
+            "time": 93.52
+          },
+          {
+            "source": 123.48,
+            "key": "fcc393e0",
+            "time": 122.715
+          }
+        ]
       },
       "mixing": {
         "firstSound": 1.15,
@@ -966,7 +1069,14 @@
       },
       "lyricsTiming": {
         "scale": 1.018115,
-        "offset": -1.868
+        "offset": -1.868,
+        "cues": [
+          {
+            "source": 168.73,
+            "key": "4972a7ba",
+            "time": 168.808
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.341,
@@ -992,7 +1102,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": -0.837
+        "offset": -0.837,
+        "cues": [
+          {
+            "source": 85.73,
+            "key": "f887245c",
+            "time": 84.088
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.106,
@@ -1044,7 +1161,19 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 54.98,
+            "key": "0c6edca3",
+            "time": 54.08
+          },
+          {
+            "source": 58.11,
+            "key": "3c57fa65",
+            "time": 57.025
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.027,
@@ -1122,7 +1251,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 107.36,
+            "key": "0a416037",
+            "time": 106.395
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.601,
@@ -1174,7 +1310,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": -0.7
+        "offset": -0.7,
+        "cues": [
+          {
+            "source": 181.01,
+            "key": "f80d182e",
+            "time": 181.06
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.602,
@@ -1200,7 +1343,79 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": -3.175
+        "offset": -2.135,
+        "cues": [
+          {
+            "source": 223.49,
+            "key": "dc637a49",
+            "time": 220.875
+          },
+          {
+            "source": 227.16,
+            "key": "b02a432c",
+            "time": 224.245
+          },
+          {
+            "source": 238.12,
+            "key": "1e0537c0",
+            "time": 234.55
+          },
+          {
+            "source": 242.12,
+            "key": "811c9dc5",
+            "time": 239.2
+          },
+          {
+            "source": 263.12,
+            "key": "6c533346",
+            "time": 248.1
+          },
+          {
+            "source": 269.07,
+            "key": "fba1bc90",
+            "time": 254.58
+          },
+          {
+            "source": 273.56,
+            "key": "fed84b42",
+            "time": 259.25
+          },
+          {
+            "source": 276.86,
+            "key": "811c9dc5",
+            "time": 262.2
+          },
+          {
+            "source": 281.24,
+            "key": "6c533346",
+            "time": 266.51
+          },
+          {
+            "source": 286.46,
+            "key": "fba1bc90",
+            "time": 272.58
+          },
+          {
+            "source": 297.26,
+            "key": "6dc33725",
+            "time": 276.9
+          },
+          {
+            "source": 299.37,
+            "key": "811c9dc5",
+            "time": 280.0
+          }
+        ],
+        "omit": [
+          {
+            "source": 290.61,
+            "key": "fed84b42"
+          },
+          {
+            "source": 294.15,
+            "key": "811c9dc5"
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.863,
@@ -1304,7 +1519,14 @@
       },
       "lyricsTiming": {
         "scale": 1,
-        "offset": 0
+        "offset": 0,
+        "cues": [
+          {
+            "source": 36.8,
+            "key": "1d08f54b",
+            "time": 35.575
+          }
+        ]
       },
       "mixing": {
         "firstSound": 0.471,
