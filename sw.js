@@ -1,6 +1,6 @@
 import {cachePrefix,offlineCacheName,rangedResponse} from './offline-cache.mjs';
-const PREFIX=cachePrefix(self.registration.scope),SHELL_CACHE=PREFIX+'shell:v18',MEDIA_CACHE=offlineCacheName(self.registration.scope);
-const SHELL=['./','./index.html','./base.css','./site.css?v=20261109-2','./app.mjs?v=20261109-2','./mixer.mjs?v=20261109-2','./mobile-mixer.mjs','./media-session.mjs?v=20261108-2','./playlist.mjs?v=20261107-5','./lyrics.mjs?v=20261109-2','./offline-cache.mjs','./offline.mjs','./analytics.mjs','./analytics-config.json','./storage.mjs','./theme.mjs','./catalog.json','./media.json','./icon.svg','./manifest.webmanifest','./artwork-monet-hd.jpg'];
+const PREFIX=cachePrefix(self.registration.scope),SHELL_CACHE=PREFIX+'shell:v19',MEDIA_CACHE=offlineCacheName(self.registration.scope);
+const SHELL=['./','./index.html','./base.css','./site.css?v=20261109-2','./app.mjs?v=20261109-3','./mixer.mjs?v=20261109-2','./mobile-mixer.mjs','./media-session.mjs?v=20261108-2','./playlist.mjs?v=20261107-5','./lyrics.mjs?v=20261109-2','./offline-cache.mjs','./offline.mjs','./analytics.mjs','./analytics-config.json','./storage.mjs','./theme.mjs','./catalog.json','./media.json','./icon.svg','./manifest.webmanifest','./artwork-monet-hd.jpg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(SHELL_CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==SHELL_CACHE&&key!==MEDIA_CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
