@@ -1,5 +1,17 @@
-const CACHE_PREFIX=`nailong-fm:${self.registration.scope}:`,CACHE=CACHE_PREFIX+'v16';
-const SHELL=['./','./index.html','./base.css','./site.css?v=20261108-1','./app.mjs?v=20261108-3','./mixer.mjs?v=20261108-2','./media-session.mjs?v=20261108-2','./playlist.mjs?v=20261107-5','./lyrics.mjs?v=20261108-3','./storage.mjs','./theme.mjs','./catalog.json','./media.json','./icon.svg','./manifest.webmanifest','./artwork/monet-hd.jpg'];
-self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==self.location.origin||!url.pathname.startsWith(new URL(self.registration.scope).pathname)||(url.pathname.includes('/audio/')||/\.(?:mp3|m4a|mp4)$/i.test(url.pathname)))return;event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(request,copy));}return response;}).catch(()=>caches.open(CACHE).then(async cache=>await cache.match(request)||(request.mode==='navigate'?await cache.match('./index.html'):Response.error()))));});
+import {cachePrefix,offlineCacheName,rangedResponse} from './offline-cache.mjs';
+const PREFIX=cachePrefix(self.registration.scope),SHELL_CACHE=PREFIX+'shell:v17',MEDIA_CACHE=offlineCacheName(self.registration.scope);
+const SHELL=['./','./index.html','./base.css','./site.css?v=20261109-1','./app.mjs?v=20261109-1','./mixer.mjs?v=20261109-1','./mobile-mixer.mjs','./media-session.mjs?v=20261108-2','./playlist.mjs?v=20261107-5','./lyrics.mjs?v=20261109-1','./offline-cache.mjs','./offline.mjs','./analytics.mjs','./analytics-config.json','./storage.mjs','./theme.mjs','./catalog.json','./media.json','./icon.svg','./manifest.webmanifest','./artwork-monet-hd.jpg'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(SHELL_CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==SHELL_CACHE&&key!==MEDIA_CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{
+ const request=event.request,url=new URL(request.url);if(!['GET','HEAD'].includes(request.method)||url.origin!==self.location.origin||!url.pathname.startsWith(new URL(self.registration.scope).pathname))return;
+ const isAudio=/\.(?:mp3|m4a|mp4)$/i.test(url.pathname);
+ event.respondWith((async()=>{
+  const media=await caches.open(MEDIA_CACHE),saved=await media.match(request.url);
+  if(isAudio){if(saved)return rangedResponse(saved,request.headers.get('Range'),request.method==='HEAD');return fetch(request);}
+  if(request.method==='HEAD')return fetch(request);
+  const shell=await caches.open(SHELL_CACHE);
+  try{const response=await fetch(request);if(response.ok){const copy=response.clone();event.waitUntil(shell.put(request,copy));return response;}const fallback=saved||await shell.match(request);return fallback||response;}
+  catch{return saved||await shell.match(request)||(request.mode==='navigate'?await shell.match(new URL('./index.html',self.registration.scope)):Response.error());}
+ })());
+});

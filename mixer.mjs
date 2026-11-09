@@ -17,7 +17,7 @@ export function mixPlan({mode='off',seconds=5,duration=0,nextDuration=0,currentM
 export function fadeGains(progress){const p=clamp(progress,0,1);return {outgoing:Math.cos(p*Math.PI/2),incoming:Math.sin(p*Math.PI/2)};}
 
 export class PlaybackMixer{
- constructor({decks,prepare,getNext,onAdopt=()=>{},onError=()=>{},onSupport=()=>{},contextFactory,nativeOnly=prefersNativePlayback()}={}){
+ constructor({decks,prepare,getNext,onAdopt=()=>{},onError=()=>{},onSupport=()=>{},onEnded=()=>{},contextFactory,nativeOnly=prefersNativePlayback()}={}){
   this.decks=decks;this.records=[null,null];this.index=0;this.prepare=prepare;this.getNext=getNext;
   this.onAdopt=onAdopt;this.onError=onError;this.onSupport=onSupport;
   this.nativeOnly=nativeOnly;
@@ -28,7 +28,7 @@ export class PlaybackMixer{
   for(const deck of decks){
    deck.addEventListener('play',()=>{if(deck===this.active&&!deck.paused){this.paused=false;this.failedNext=null;void this.ensurePrepared();}});
    deck.addEventListener('pause',()=>{if(deck===this.active&&deck.paused&&!deck.ended&&!this.paused)this.pause();});
-   deck.addEventListener('ended',()=>{if(deck!==this.active)return;if(!this.paused&&this.options.continuous)void this.advance(false);else this.paused=true;});
+   deck.addEventListener('ended',()=>{if(deck!==this.active)return;onEnded(this.record);if(!this.paused&&this.options.continuous)void this.advance(false);else this.paused=true;});
    deck.addEventListener('timeupdate',()=>{if(deck===this.active)this.tick();});
   }
  }

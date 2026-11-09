@@ -14,6 +14,7 @@ export function advanceHybrid({cursor,cue,tap=false,step=1,now=0,lastTap=-Infini
  if(tap)return clamp(Math.max(cursor,cue)+1);
  return clamp(now-lastTap>=manualHold?cue:Math.max(cursor,cue));
 }
+import {savedLyrics,storeLyrics} from './offline-cache.mjs';
 const memory=new Map();
 const audioKeys=new WeakMap();let nextAudioKey=0;
 function cacheKey(track,configured,local){const blob=local.audio instanceof Blob?local.audio:null;if(blob&&!audioKeys.has(blob))audioKeys.set(blob,++nextAudioKey);return JSON.stringify([track.id,track.duration,configured.lyricsId,configured.lyricsIdentity,configured.lyricsTiming,configured.sha256,configured.lyricsSync,blob?audioKeys.get(blob):0]);}
@@ -34,6 +35,13 @@ export function retimeLines(lines,{scale=1,offset=0,sections=[],cues=[],omit=[]}
 }
 function resultOf(record,approximate=false){const lines=parseLrc(record.syncedLyrics||'');if(lines.length)return {kind:'synced',lines,recordId:record.id,approximate};const plain=String(record.plainLyrics||'').split(/\r?\n/).map(text=>text.trim()).filter(text=>text&&!/^\[.*\]$/.test(text)).map(text=>({time:0,text}));if(record.instrumental)return {kind:'instrumental',lines:[],recordId:record.id};return {kind:plain.length?'plain':'none',lines:plain,recordId:record.id};}
 export async function loadLyrics(track,{local={},configured={},signal}={}){
+ if(local.lrc)return {kind:parseLrc(local.lrc).length?'synced':'none',lines:parseLrc(local.lrc),local:true};
+ const saved=!local.audio?await savedLyrics(track,configured):null;
+ if(globalThis.navigator?.onLine===false&&saved)return saved;
+ try{const result=await loadOnlineLyrics(track,{local,configured,signal});if(!local.audio)await storeLyrics(track,configured,result);return result.kind==='none'&&saved?saved:result;}
+ catch(error){if(error.name!=='AbortError'&&saved)return saved;throw error;}
+}
+async function loadOnlineLyrics(track,{local={},configured={},signal}={}){
  if(local.lrc){const lines=parseLrc(local.lrc);return {kind:lines.length?'synced':'none',lines,local:true};}
  if(configured.lyrics){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
  const key=cacheKey(track,configured,local);if(memory.has(key))return memory.get(key);
