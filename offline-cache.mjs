@@ -3,6 +3,7 @@ export const cachePrefix=base=>`nailong-fm:${base}:`;
 export const offlineCacheName=(base=appBase)=>cachePrefix(base)+'offline:v1';
 export const audioURL=(config,base=appBase)=>{if(!config?.audio)return null;const url=new URL(config.audio,base);if(config.sha256)url.searchParams.set('nfm',config.sha256);return url.href;};
 export const trackKey=(id,base=appBase)=>new URL(`__offline__/tracks/${encodeURIComponent(id)}`,base).href;
+export async function readSavedAudio(config){try{const cache=await caches.open(offlineCacheName()),response=await cache.match(audioURL(config));return response?await response.blob():null;}catch{return null;}}
 export function lyricsSignature(track,config){return JSON.stringify([track.id,config.sha256,config.duration,config.lyricsId,config.lyricsIdentity,config.lyricsTiming,config.lyricsSync,config.lyrics]);}
 function lyricsKey(track,config){let hash=2166136261;for(const c of lyricsSignature(track,config))hash=Math.imul(hash^c.charCodeAt(0),16777619)>>>0;return new URL(`__offline__/lyrics/${encodeURIComponent(track.id)}?v=${hash.toString(16)}`,appBase).href;}
 export async function savedLyrics(track,config){try{const cache=await caches.open(offlineCacheName()),response=await cache.match(lyricsKey(track,config));if(!response)return null;const envelope=await response.json();return envelope.signature===lyricsSignature(track,config)?envelope.result:null;}catch{return null;}}

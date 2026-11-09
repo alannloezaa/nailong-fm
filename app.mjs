@@ -1,9 +1,9 @@
 import {readTrack,saveTrack,localAudioIds} from './storage.mjs';
-import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261109-1';
+import {normalize,cueAt,advanceHybrid,loadLyrics} from './lyrics.mjs?v=20261109-2';
 import {buildTheme,dominantHue,pastelHues,rgbHue,hslToRgb,cssRgb,rgbHex} from './theme.mjs';
-import {usesSystemVolume} from './mixer.mjs?v=20261109-1';
+import {usesSystemVolume} from './mixer.mjs?v=20261109-2';
 import {createPlaybackMixer} from './mobile-mixer.mjs';
-import {audioURL} from './offline-cache.mjs';
+import {audioURL,readSavedAudio} from './offline-cache.mjs';
 import {OfflineLibrary} from './offline.mjs';
 import {Metrics} from './analytics.mjs';
 import {connectMediaSession} from './media-session.mjs?v=20261108-2';
@@ -100,14 +100,14 @@ function tick(){
  if(!seeking){seek.max=String(max||1);seek.value=String(time);seek.style.setProperty('--ef-progress',`${max?Math.min(100,time/max*100):0}%`);}q('.ef-elapsed').textContent=fmt(time);q('.ef-duration').textContent=fmt(max);
 }
 function updateQueueButtons(){q('.ef-back').disabled=!nextAudioId(current?.id,-1);q('.ef-forward').disabled=!nextAudioId(current?.id,1);q('.ef-play').disabled=!playingReady;seek.disabled=!playingReady;}
-async function play(){if(!playingReady){openSettings();return;}if(audio.ended){audio.currentTime=0;cursor=-1;}try{await mixer.play();started=!audio.paused;renderPlay();tick();}catch(error){if(error.name==='NotAllowedError')notify('Pulsa reproducir para comenzar.');else if(error.name!=='AbortError')notify('No se pudo reproducir este archivo. Prueba un MP3 o M4A sin protección.');}}
+async function play(){if(!playingReady){openSettings();return;}if(audio.error){const token=generation,position=audio.currentTime||0,record=await prepareAudio(current.id);if(token!==generation){record?.release?.();return;}mixer.setTrack(record);if(position>0)audio.currentTime=position;}if(audio.ended){audio.currentTime=0;cursor=-1;}try{await mixer.play();started=!audio.paused;renderPlay();tick();}catch(error){if(error.name==='NotAllowedError')notify('Pulsa reproducir para comenzar.');else if(error.name!=='AbortError')notify('No se pudo reproducir este archivo. Prueba un MP3 o M4A sin protección.');}}
 async function refreshLyrics(token=generation){
  lyricsRequest?.abort();lyricsRequest=new AbortController();lyrics={kind:'loading',lines:[]};cursor=-1;tick();
  try{const found=await loadLyrics({...current,duration:duration()},{local,configured:configured(),signal:lyricsRequest.signal});if(token!==generation)return;lyrics=found;cursor=found.kind==='synced'?cueAt(found.lines,(audio.currentTime||0)+Number(offsets[current.id]||0)):-1;tick();}
  catch(error){if(error.name==='AbortError'||token!==generation)return;lyrics={kind:'error',lines:[]};tick();}
 }
 
-async function prepareAudio(id){const track=catalog.tracks.find(t=>t.id===id);if(!track)return null;let record={};try{record=await readTrack(id);}catch{}let objectUrl=record.audio instanceof Blob?URL.createObjectURL(record.audio):null,references=0;const lease=()=>{references++;let released=false;return {track,local:record,url:objectUrl||audioURL(media.tracks[id]),mixing:objectUrl?{}:media.tracks[id]?.mixing||{},retain:lease,release:()=>{if(released)return;released=true;if(--references===0&&objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=null;}}};};return lease();}
+async function prepareAudio(id){const track=catalog.tracks.find(t=>t.id===id);if(!track)return null;let record={};try{record=await readTrack(id);}catch{}const blob=record.audio instanceof Blob?record.audio:offline.saved.has(id)?await readSavedAudio(media.tracks[id]):null;let objectUrl=blob?URL.createObjectURL(blob):null,references=0;const lease=()=>{references++;let released=false;return {track,local:record,url:objectUrl||audioURL(media.tracks[id]),mixing:record.audio?{}:media.tracks[id]?.mixing||{},retain:lease,release:()=>{if(released)return;released=true;if(--references===0&&objectUrl){URL.revokeObjectURL(objectUrl);objectUrl=null;}}};};return lease();}
 function adoptAudio(record,{playing=false,automatic=false,handoff=false}={}){
  if(handoff){audio=mixer.active;renderPlay();tick();return;}
  metrics.listening.reset(record.track);if(playing&&!mixer.active.paused)metrics.listening.play();
@@ -190,11 +190,11 @@ function renderOffline(){
  q('#remove-current').hidden=!saved;q('#remove-current').disabled=offline.busy;q('#remove-downloads').disabled=offline.busy||!offline.saved.size;q('#cancel-download').hidden=!offline.busy;
 }
 function renderDownload(state){
- q('#offline-progress').hidden=false;q('#download-progress').max=Math.max(1,state.total);q('#download-progress').value=state.done+state.failed.length;q('#download-title').textContent=state.finished?'Descarga terminada':state.title||'Preparando descarga…';q('#download-detail').textContent=`${state.done} guardadas · ${state.failed.length} pendientes · ${state.total} elegidas`;renderOffline();
+ q('#offline-progress').hidden=false;q('#download-progress').max=Math.max(1,state.total);q('#download-progress').value=state.done+state.failed.length;q('#download-title').textContent=state.finished?'Descarga terminada':state.title||'Preparando descarga…';q('#download-detail').textContent=`${state.done} ${state.done===1?'guardada':'guardadas'} · ${state.failed.length} pendientes · ${state.total} elegidas`;renderOffline();
 }
 async function saveOffline(ids){
  if(offline.busy)return;q('#offline-result').textContent='';metrics.event('offline_download',{action:'start',count:ids.length});
- try{const result=await offline.download(ids);if(!result)return;const partial=result.partial.length;q('#offline-result').textContent=`${result.cancelled?'Descarga cancelada. ':''}${result.done} canciones guardadas.${result.failed.length?` ${result.failed.length} no se pudieron guardar; vuelve a intentarlo.`:''}${partial?` En ${partial} falta letra o carátula; su audio sí está guardado.`:''}`;metrics.event('offline_download',{action:result.cancelled?'cancel':'complete',count:result.done});}
+ try{const result=await offline.download(ids);if(!result)return;const partial=result.partial.length;q('#offline-result').textContent=`${result.cancelled?'Descarga cancelada. ':''}${result.done} ${result.done===1?'canción guardada':'canciones guardadas'}.${result.failed.length?` ${result.failed.length} no se pudieron guardar; vuelve a intentarlo.`:''}${partial?` En ${partial} falta letra o carátula; su audio sí está guardado.`:''}`;metrics.event('offline_download',{action:result.cancelled?'cancel':'complete',count:result.done});}
  catch(error){q('#offline-result').textContent=error.message;notify(error.message);}finally{renderOffline();}
 }
 q('#save-current').addEventListener('click',()=>void saveOffline(current?[current.id]:[]));q('#save-playlist').addEventListener('click',()=>void saveOffline(playlist.ids));q('#save-catalog').addEventListener('click',()=>void saveOffline(catalog.tracks.map(track=>track.id)));q('#cancel-download').addEventListener('click',()=>offline.cancel());

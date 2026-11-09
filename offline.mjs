@@ -1,5 +1,5 @@
 import {appBase,offlineCacheName,audioURL,trackKey,savedLyrics} from './offline-cache.mjs';
-import {loadLyrics} from './lyrics.mjs?v=20261109-1';
+import {loadLyrics} from './lyrics.mjs?v=20261109-2';
 
 export async function verifyAudio(buffer,config){
  if(buffer.byteLength!==config.bytes)throw new Error('El archivo llegó incompleto. Vuelve a intentarlo.');
@@ -29,7 +29,8 @@ export class OfflineLibrary{
      if(!this.saved.has(track.id)){
       const response=await fetch(url,{signal,cache:'no-store'});if(!response.ok||response.status!==200)throw new Error('No se pudo descargar el audio completo.');
       const buffer=await response.arrayBuffer();await verifyAudio(buffer,config);if(signal.aborted)throw new DOMException('Cancelled','AbortError');
-      await cache.put(url,new Response(buffer,{headers:{'Content-Type':response.headers.get('Content-Type')||'audio/mpeg','Content-Length':String(buffer.byteLength),'Accept-Ranges':'bytes'}}));
+      const headers=new Headers({'Content-Type':response.headers.get('Content-Type')||'audio/mpeg','Content-Length':String(buffer.byteLength),'Accept-Ranges':'bytes'});for(const name of ['ETag','Last-Modified'])if(response.headers.has(name))headers.set(name,response.headers.get(name));
+      await cache.put(url,new Response(buffer,{headers}));
      }
      let art=false,lyrics=false;
      try{const artURL=new URL(track.artwork,appBase).href,response=await fetch(artURL,{signal});if(response.ok){await cache.put(artURL,response);art=true;}}catch(error){if(error.name==='AbortError')throw error;}
