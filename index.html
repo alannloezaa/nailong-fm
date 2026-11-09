@@ -5,11 +5,13 @@
  <meta name="theme-color" content="#15211c"><meta name="description" content="Elige una canción, disfruta su carátula y acompaña cada frase a tu ritmo.">
  <title>Nailong FM · música a tu ritmo</title>
  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
+ <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+ <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Nailong FM">
  <link rel="canonical" href="https://alannloezaa.github.io/nailong-fm/">
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;650;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261109-2">
- <script type="module" src="./app.mjs?v=20261109-3"></script>
+ <link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./site.css?v=20261109-4">
+ <script type="module" src="./app.mjs?v=20261109-4"></script>
 </head>
 <body>
 <div id="el-flow" aria-label="Nailong FM">
@@ -55,6 +57,7 @@
  <section><h3>Fondo</h3><label class="range-label">Desenfoque<input id="background-blur" type="range" min="0" max="30" step="1" value="5"></label><label class="select-label">Ajustar imagen<select id="background-fit"><option value="cover">Llenar pantalla</option><option value="contain">Mostrar imagen completa</option></select></label></section>
  <section><h3>Tu música</h3><label class="file-label">Agregar audio a esta canción<input id="audio-file" type="file" accept="audio/*,video/mp4,.mp3,.m4a,.mp4"></label><span class="field-note">Solo en este dispositivo.</span><span id="file-status" class="field-note" role="status" hidden></span></section>
  <section id="offline-section"><h3>Sin conexión</h3><p id="offline-summary" class="field-note" role="status">Revisando canciones guardadas…</p><div class="offline-actions"><button id="save-current" type="button">Guardar esta canción</button><button id="save-playlist" type="button">Guardar Mi lista</button><button id="save-catalog" type="button">Guardar todo el catálogo</button></div><div id="offline-progress" hidden><label for="download-progress" id="download-title">Preparando descarga…</label><progress id="download-progress" max="1" value="0"></progress><p id="download-detail" class="field-note" role="status"></p><button id="cancel-download" type="button">Cancelar descarga</button></div><p id="offline-result" class="field-note" role="status"></p><div class="offline-remove"><button id="remove-current" type="button">Quitar esta descarga</button><button id="remove-downloads" type="button">Quitar todas las descargas</button></div><p class="field-note">Guarda con internet una primera vez y después elige Guardadas en Canciones. Audio, letra disponible y carátula quedan en este navegador. No necesitas instalar una app. El navegador puede liberar estos datos si falta espacio; evita el modo privado.</p></section>
+ <section id="install-section"><h3>Acceso directo</h3><p id="install-status" class="field-note" role="status">Un icono para entrar directo a tu música, sin buscar el enlace.</p><button id="install-shortcut" type="button" aria-controls="install-help" aria-expanded="false">Agregar a pantalla de inicio</button><div id="install-help" hidden><ol id="install-steps"></ol><p class="field-note">Abre el nuevo icono con internet y revisa Guardadas. En iPhone, las descargas de Safari pueden no aparecer en la app: guárdalas una vez desde el nuevo icono para escuchar sin conexión.</p></div></section>
  <p id="metrics-notice" class="field-note">Este sitio utiliza estadísticas anónimas para mejorar la experiencia.</p>
  <nav class="artist-links" aria-label="Escuchar al artista"><a id="spotify-link" class="platform-primary" target="_blank" rel="noopener" href="https://open.spotify.com/artist/1jtvmXiemNFkPO11NMdjfu">Nsqk en Spotify ↗</a><a id="apple-link" class="platform-secondary" target="_blank" rel="noopener" href="https://music.apple.com/mx/artist/nsqk/1480741185">Nsqk en Apple Music ↗</a></nav>
 </dialog>

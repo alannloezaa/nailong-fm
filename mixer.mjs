@@ -7,6 +7,17 @@ export function prefersNativePlayback(device=globalThis.navigator){
  return usesSystemVolume(device)||/Android/i.test(device?.userAgent||'');
 }
 
+export function playbackDuration(deck,record){
+ const actual=Number(deck?.duration),expected=Number(record?.expectedDuration??record?.track?.duration)||0;
+ if(expected>0&&(!Number.isFinite(actual)||actual<=0||Math.abs(actual-expected)>Math.max(1,expected*.02)))return expected;
+ return Number.isFinite(actual)&&actual>0?actual:expected||Number(record?.track?.duration)||0;
+}
+export function completeMetadata(deck,record){
+ if(deck?.readyState<1||!Number.isFinite(deck?.duration)||deck.duration<=0)return false;
+ const expected=Number(record?.expectedDuration??record?.track?.duration)||0;
+ return !expected||Math.abs(deck.duration-expected)<=Math.max(1,expected*.02);
+}
+
 export function mixPlan({mode='off',seconds=5,duration=0,nextDuration=0,currentMix={},nextMix={}}={}){
  const end=mode==='auto'?Math.max(0,duration-clamp(duration-Number(currentMix.lastSound??duration)-.25,0,8)):duration;
  const incomingStart=mode==='auto'?clamp(Number(nextMix.firstSound||0)-.15,0,2):0;
@@ -126,7 +137,7 @@ export class PlaybackMixer{
   const from=this.fade.from;this.fade=null;this._gain(this.index,1);this._gain(from,0);this._clear(from);void this.ensurePrepared();
  }
  cancelForSeek(){this.operation++;this.handoff=null;this.finishMix();this.failedNext=null;}
- _plan(){return mixPlan({mode:this.gains?this.options.mode:'off',seconds:this.options.seconds,duration:Number.isFinite(this.active.duration)?this.active.duration:this.record?.track.duration||0,nextDuration:this.next?.track.duration||0,currentMix:this.record?.mixing,nextMix:this.next?.mixing});}
+ _plan(){return mixPlan({mode:this.gains?this.options.mode:'off',seconds:this.options.seconds,duration:playbackDuration(this.active,this.record),nextDuration:this.next?.expectedDuration||this.next?.track.duration||0,currentMix:this.record?.mixing,nextMix:this.next?.mixing});}
  _schedule(elapsed=0){
   if(!this.fade)return;const fade=this.fade,remaining=Math.max(.01,fade.duration-elapsed),count=128;
   for(const [index,kind]of [[fade.from,'outgoing'],[this.index,'incoming']]){
