@@ -17,7 +17,7 @@ export function advanceHybrid({cursor,cue,tap=false,step=1,now=0,lastTap=-Infini
 import {savedLyrics,storeLyrics} from './offline-cache.mjs';
 const memory=new Map();
 const audioKeys=new WeakMap();let nextAudioKey=0;
-function cacheKey(track,configured,local){const blob=local.audio instanceof Blob?local.audio:null;if(blob&&!audioKeys.has(blob))audioKeys.set(blob,++nextAudioKey);return JSON.stringify([track.id,track.duration,configured.lyricsId,configured.lyricsIdentity,configured.lyricsTiming,configured.sha256,configured.lyricsSync,blob?audioKeys.get(blob):0]);}
+function cacheKey(track,configured,local){const blob=local.audio instanceof Blob?local.audio:null;if(blob&&!audioKeys.has(blob))audioKeys.set(blob,++nextAudioKey);return JSON.stringify([track.id,track.duration,configured.lyricsId,configured.lyricsIdentity,configured.lyricsTiming,configured.sha256,configured.lyricsSync,configured.lyrics,blob?audioKeys.get(blob):0]);}
 async function getJson(url,signal){
  for(let attempt=0;attempt<3;attempt++){
   const response=await fetch(url,{signal,headers:{'Lrclib-Client':'NailongFM/1.0 (https://alannloezaa.github.io/nailong-fm/)'}});
@@ -43,7 +43,7 @@ export async function loadLyrics(track,{local={},configured={},signal}={}){
 }
 async function loadOnlineLyrics(track,{local={},configured={},signal}={}){
  if(local.lrc){const lines=parseLrc(local.lrc);return {kind:lines.length?'synced':'none',lines,local:true};}
- if(configured.lyrics){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
+ if(configured.lyrics&&(!configured.lyricsAudioSha256||configured.lyricsAudioSha256===configured.sha256)&&(!local.audio||local.audio.size===configured.bytes)&&Math.abs(Number(configured.duration)-track.duration)<.4){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
  const key=cacheKey(track,configured,local);if(memory.has(key))return memory.get(key);
  let result;
  if(configured.lyricsId){try{
