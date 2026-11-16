@@ -8,7 +8,12 @@ export async function verifyAudio(buffer,config){
 }
 export class OfflineLibrary{
  constructor({onChange=()=>{},onProgress=()=>{}}={}){this.tracks=[];this.media={};this.saved=new Map();this.onChange=onChange;this.onProgress=onProgress;this.busy=false;this.controller=null;}
- async configure(tracks,media){this.tracks=tracks;this.media=media;await this.refresh();}
+ async configure(tracks,media,{retiredIds=[]}={}){this.tracks=tracks;this.media=media;try{await this.pruneRetired(retiredIds);}catch{}await this.refresh();}
+ async pruneRetired(ids){
+  if(!ids.length||!globalThis.caches)return;const retired=new Set(ids),keptArt=new Set(this.tracks.map(t=>new URL(t.artwork,appBase).href)),cache=await caches.open(offlineCacheName());
+  for(const id of ids){const response=await cache.match(trackKey(id));if(!response)continue;try{const record=await response.json();if(record.url)await cache.delete(record.url);if(record.artwork&&!keptArt.has(record.artwork))await cache.delete(record.artwork);}catch{}await cache.delete(trackKey(id));}
+  for(const request of await cache.keys()){const path=new URL(request.url).pathname;if([...retired].some(id=>path.endsWith(`/audio/${id}.mp3`)||path.endsWith(`/audio-${id}.mp3`)||path.endsWith(`/__offline__/lyrics/${encodeURIComponent(id)}`)))await cache.delete(request);}
+ }
  async refresh(){
   const found=new Map();try{const cache=await caches.open(offlineCacheName());for(const track of this.tracks){const config=this.media[track.id],response=await cache.match(trackKey(track.id));if(!response||!config)continue;const record=await response.json();if(record.sha===config.sha256&&await cache.match(audioURL(config)))found.set(track.id,record);}}catch{}
   this.saved=found;this.onChange();return found;
