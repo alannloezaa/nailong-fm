@@ -4,7 +4,7 @@ Reproductor personal en HTML, CSS y JavaScript. Sitio: https://alannloezaa.githu
 
 ## Catálogo
 
-66 canciones con audio y 47 álbumes o sencillos. Se retiraron las ocho canciones solicitadas el 16 de noviembre de 2026, sus MP3 y las carátulas que no comparte otra canción. MONET y Dientes De Fierro se conservan. Se agregaron 22 archivos del usuario. Te Quiero usa la versión de estudio y se retiró un minuto de casi silencio al final mediante copia de paquetes MP3, sin recomprimir. Sigue pendiente el archivo Si no te tengo a ti, de Hombres G.
+67 canciones con audio y 47 álbumes o sencillos. Se retiraron las ocho canciones solicitadas el 16 de noviembre de 2026, sus MP3 y las carátulas que no comparte otra canción. MONET y Dientes De Fierro se conservan. Se agregaron 23 archivos del usuario. Te Quiero usa la versión de estudio y se retiró un minuto de casi silencio al final mediante copia de paquetes MP3, sin recomprimir. También se incluyó Si no te tengo a ti, de Hombres G.
 
 ## Reproducción
 
@@ -12,7 +12,7 @@ En laptop se ofrecen Crossfade y AutoMix suave, con 1 a 12 segundos ajustables. 
 
 Aleatorio tiene un botón visible junto a los controles superiores y una opción en Personalizar. Reparte artistas, no repite canciones dentro de la vuelta y mantiene el orden para precarga, Siguiente y Anterior. Funciona en el catálogo y en Mi lista. La lista se detiene al terminar; el catálogo puede volver al inicio. Las preferencias se conservan en este dispositivo.
 
-Las letras tienen controles manual, mixto y automático y ajustes asociados a la versión de audio. Se revisaron las 21 letras nuevas disponibles con anclas de palabras sobre el audio aportado y se incluyeron copias sincronizadas locales para evitar que una edición remota cambie los tiempos. Cuesta Abajo tiene audio pero no una letra sincronizada verificada. No se promete precisión editorial de cada frase. Spotify es el enlace principal; Apple Music es secundario. Son enlaces externos y no conectan cuentas.
+Las letras tienen controles manual, mixto y automático y ajustes asociados a la versión de audio. Se revisaron 21 letras nuevas con anclas de voz y se agregó una letra más por coincidencia de versión y duración. Estas letras se compararon con anclas de palabras sobre el audio aportado y se incluyeron copias sincronizadas locales para evitar que una edición remota cambie los tiempos. Cuesta Abajo tiene audio pero no una letra sincronizada verificada. No se promete precisión editorial de cada frase. Spotify es el enlace principal; Apple Music es secundario. Son enlaces externos y no conectan cuentas.
 
 ## Sin conexión
 
