@@ -43,7 +43,10 @@ export async function loadLyrics(track,{local={},configured={},signal}={}){
 }
 async function loadOnlineLyrics(track,{local={},configured={},signal}={}){
  if(local.lrc){const lines=parseLrc(local.lrc);return {kind:lines.length?'synced':'none',lines,local:true};}
- if(configured.lyrics&&(!configured.lyricsAudioSha256||configured.lyricsAudioSha256===configured.sha256)&&(!local.audio||local.audio.size===configured.bytes)&&Math.abs(Number(configured.duration)-track.duration)<.4){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
+ // A verified hosted recording can have a slightly different duration in an MP3
+ // demuxer. Its fingerprint, rather than that estimate, binds the reviewed cues.
+ const signedRecording=!local.audio&&configured.lyricsAudioSha256&&configured.lyricsAudioSha256===configured.sha256;
+ if(configured.lyrics&&(!configured.lyricsAudioSha256||configured.lyricsAudioSha256===configured.sha256)&&(!local.audio||local.audio.size===configured.bytes)&&(signedRecording||Math.abs(Number(configured.duration)-track.duration)<.4)){const response=await fetch(configured.lyrics,{signal});if(response.ok){const lines=parseLrc(await response.text());if(lines.length)return {kind:'synced',lines,local:true};}}
  const key=cacheKey(track,configured,local);if(memory.has(key))return memory.get(key);
  let result;
  if(configured.lyricsId){try{

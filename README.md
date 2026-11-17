@@ -12,7 +12,7 @@ En laptop se ofrecen Crossfade y AutoMix suave, con 1 a 12 segundos ajustables. 
 
 Aleatorio tiene un botón visible junto a los controles superiores y una opción en Personalizar. Reparte artistas, no repite canciones dentro de la vuelta y mantiene el orden para precarga, Siguiente y Anterior. Funciona en el catálogo y en Mi lista. La lista se detiene al terminar; el catálogo puede volver al inicio. Las preferencias se conservan en este dispositivo.
 
-Las letras tienen controles manual, mixto y automático y ajustes asociados a la versión de audio. Se revisaron 21 letras nuevas con anclas de voz y se agregó una letra más por coincidencia de versión y duración. Estas letras se compararon con anclas de palabras sobre el audio aportado y se incluyeron copias sincronizadas locales para evitar que una edición remota cambie los tiempos. Cuesta Abajo tiene audio pero no una letra sincronizada verificada. No se promete precisión editorial de cada frase. Spotify es el enlace principal; Apple Music es secundario. Son enlaces externos y no conectan cuentas.
+Las letras tienen controles manual, mixto y automático y ajustes asociados a la versión de audio. Se revisaron 21 letras nuevas con anclas de voz y se agregó una letra más por coincidencia de versión y duración. Estas letras se compararon con anclas de palabras sobre el audio aportado y se incluyeron copias sincronizadas locales para evitar que una edición remota cambie los tiempos. Cuesta Abajo incluye 44 frases ajustadas a la grabación aportada. Se verificaron el inicio, ambos coros, la última frase, los saltos de tiempo y la letra guardada sin conexión. La letra está ligada a la huella del audio; una estimación distinta de duración MP3 no la descarta. No se promete precisión editorial de cada frase. Spotify es el enlace principal; Apple Music es secundario. Son enlaces externos y no conectan cuentas.
 
 ## Sin conexión
 
@@ -28,4 +28,4 @@ Se conservan los temas oscuro y claro, colores pastel, tono de carátula, fondo,
 
 Umami registra eventos anónimos con un aviso breve; se respetan DNT/GPC y preferencias previas. No identifica a una persona ni conecta Spotify.
 
-100 pruebas automáticas. Revisión de solapamiento real de dos elementos en Crossfade de laptop; MONET guardado con copia AAC, avance a 100 segundos y siguiente canción sin internet; descargas anteriores conservadas y Te Quiero de estudio. Tamaños de teléfono/tablet en Chromium. La emulación no certifica Safari físico ni las políticas de segundo plano de cada teléfono.
+101 pruebas automáticas. Revisión de solapamiento real de dos elementos en Crossfade de laptop; MONET guardado con copia AAC, avance a 100 segundos y siguiente canción sin internet; descargas anteriores conservadas y Te Quiero de estudio. Tamaños de teléfono/tablet en Chromium. La emulación no certifica Safari físico ni las políticas de segundo plano de cada teléfono.

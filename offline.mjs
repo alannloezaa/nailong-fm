@@ -1,5 +1,5 @@
 import {appBase,offlineCacheName,audioURL,trackKey,savedLyrics} from './offline-cache.mjs';
-import {loadLyrics} from './lyrics.mjs?v=20261116-3';
+import {loadLyrics} from './lyrics.mjs?v=20261116-4';
 
 export async function verifyAudio(buffer,config){
  if(buffer.byteLength!==config.bytes)throw new Error('El archivo llegó incompleto. Vuelve a intentarlo.');
